@@ -5,6 +5,7 @@
 pull.sh
 push.sh
 twa_version.conf
+*.conf
 
 # Cache and bytecode
 *~
