@@ -49,7 +49,7 @@ header{
 }
 
 .navItem:hover {
-    color: lightgreen;
+    color: yellowgreen;
 }
 
 .navItem:after {
@@ -60,7 +60,7 @@ header{
     left: 50%;
     top: 45px;
     position: absolute;
-    background: lightgreen;
+    background: yellowgreen;
     transition: width 0.3s ease 0s, left 0.3s ease 0s;
     width: 0;
 }
@@ -142,6 +142,12 @@ header{
     float: left;
 }
 
+.articles_main_title{
+    font-size: 45px;
+    text-align: center;
+    color: #282c2f;
+}
+
 @keyframes slider {
     0% {
         left: 0;
@@ -172,7 +178,73 @@ header{
     }
 }
 
+.articles {
+    width: 90%;
+    margin: 50px auto;
+}
 
+.article {
+    position: relative;
+    width: 25%;
+    background: white;
+    border: 1px solid #282c2f;
+    margin-bottom: 50px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.article_header {
+    text-align: center;
+    padding: 50px 10px;
+    background-image: url("../Images/article_background.jpg");
+    background-size: 100% 100%;
+    font-size: 30px;
+    color: #282c2f;
+    margin: 0;
+}
+
+.article_body {
+    padding: 20px 20px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.article_text{
+    text-align: justify;
+}
+
+.article_body {
+    display: block;
+}
+
+.more_info_button{
+    position: absolute;
+    width: 95%;
+    display: block;
+    bottom: 5px;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    text-decoration: none;
+    padding: 10px 5px;
+    background-color: #282c2f;
+    font-size: 20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 1s;
+}
+
+.more_info_button:hover{
+    color: yellowgreen;
+}
 
 @media only screen and (max-width: 990px) {
     #main_nav{
@@ -181,6 +253,9 @@ header{
     #menuIcon{
         visibility: visible;
     }
+    .article {
+        width: 40%;
+    }
 }
 
 @media only screen and (max-width: 490px){
@@ -188,5 +263,15 @@ header{
         font-size: 25px;
         top: 15px;
         left: 100px
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .articles {
+        width: 100%;
+    }
+
+    .article {
+        width: 80%;
     }
 }
