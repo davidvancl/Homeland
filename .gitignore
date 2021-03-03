@@ -2,6 +2,9 @@
 */.idea
 */.vscode
 
+pull.sh
+push.sh
+
 # Cache and bytecode
 *~
 *.pyc
