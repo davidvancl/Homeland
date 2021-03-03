@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'gtaFont';
+    src: url('custom_format.ttf') format('truetype');
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #282c2f;
+    text-align: center;
+}
+.GTAFont{
+    font-family: gtaFont, serif;
+    color: white;
+    font-size: 40px;
+}
+
+.navItem{
+    position: relative;
+    float: right;
+    top: 10px;
+    right: 0;
+    margin-top: 0;
+    margin-right: 20px;
+    font-size: 30px;
+    text-underline-mode: none;
+}
+
+.navItem:hover {
+    color: lightgreen;
+}
+
+.navItem:after {
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    top: 45px;
+    position: absolute;
+    background: lightgreen;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+.navItem:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+#headerTitle{
+    position: absolute;
+    left: 110px;
+    top: 5px;
+    margin-top: 0;
+}
+
+#header{
+    z-index: 1;
+}
+
+#headerLogo{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 70px;
+    height: 70px;
+}
+
+#sliderLogo{
+    position: absolute;
+    width: 25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#slider {
+    position: absolute;
+    margin-top: 50px;
+    overflow: hidden;
+    z-index: 0;
+    width: 100%;
+}
+
+#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+}
+
+#slider figure img {
+    width: 20%;
+    float: left;
+}
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
+}
