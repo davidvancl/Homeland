@@ -48,9 +48,7 @@
             </figure>
             <img id="sliderLogo" src="Images/Slider/LogoSlider.svg" alt="">
         </section>
-
-
-
+        
         <main>
             <article> Vlastní text článku.
                 <section>První <em>kapitola</em>, <strong>třeba</strong> i s podnadpisy</section>
