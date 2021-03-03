@@ -18,15 +18,25 @@
         <header id="header">
             <img id="headerLogo" src="Images/header_logo.png" alt="Grand Theft Auto V">
             <h1 id="headerTitle" class="GTAFont">Grand Theft Auto</h1>
-            <nav>
+            <nav id="main_nav">
                 <hgroup>
-                    <a href="#"><h2 class="GTAFont navItem">Historie</h2></a>
-                    <a href="#"><h2 class="GTAFont navItem">Informace</h2></a>
-                    <a href="#"><h2 class="GTAFont navItem">Recenze</h2></a>
-                    <a href="#"><h2 class="GTAFont navItem">Kontakt</h2></a>
+                    <a href="#" class="navHref"><h2 class="GTAFont navItem">Historie</h2></a>
+                    <a href="#" class="navHref"><h2 class="GTAFont navItem">Informace</h2></a>
+                    <a href="#" class="navHref"><h2 class="GTAFont navItem">Recenze</h2></a>
+                    <a href="#" class="navHref"><h2 class="GTAFont navItem">Kontakt</h2></a>
                 </hgroup>
             </nav>
+            <img id="menuIcon" src="Images/menu_icon.png" alt="Menu" onclick="changeMenuVisibility()">
         </header>
+
+        <nav id="sub_nav" style="height: 0">
+            <hgroup>
+                <a href="#" class="navHref"><h2 class="GTAFont navItem navSuvItem">Historie</h2></a>
+                <a href="#" class="navHref"><h2 class="GTAFont navItem navSuvItem">Informace</h2></a><br>
+                <a href="#" class="navHref"><h2 class="GTAFont navItem navSuvItem">Recenze</h2></a><br>
+                <a href="#" class="navHref"><h2 class="GTAFont navItem navSuvItem">Kontakt</h2></a><br>
+            </hgroup>
+        </nav>
 
         <section id="slider">
             <figure>
@@ -48,7 +58,15 @@
 <!--        <nav>spodní navigace</nav>-->
 <!--        <aside>reklama</aside>-->
 <!--        <footer>patička</footer>-->
-    <br>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+        <script>
+            function changeMenuVisibility(){
+                if(document.getElementById("sub_nav").style.height === "0px"){
+                    document.getElementById("sub_nav").style.height = "270px";
+                } else {
+                    document.getElementById("sub_nav").style.height = "0px";
+                }
+            }
+        </script>
     </body>
 </html>

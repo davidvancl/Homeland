@@ -31,7 +31,21 @@ header{
     margin-top: 0;
     margin-right: 20px;
     font-size: 30px;
-    text-underline-mode: none;
+}
+
+.navSuvItem{
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    font-size: 30px;
+    margin-top: 10px;
+    float: none;
+}
+
+.navHref{
+    text-decoration: none;
+    margin: 0;
 }
 
 .navItem:hover {
@@ -90,6 +104,31 @@ header{
     width: 100%;
 }
 
+#sub_nav{
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    float: left;
+    align-content: center;
+    text-align: center;
+    z-index: 1;
+    background-color: rgba(40,44,47,0.9);
+    overflow: hidden;
+    transition: all 1s linear;
+}
+
+#menuIcon{
+    position: absolute;
+    float: right;
+    right: 10px;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
 #slider figure {
     position: relative;
     width: 500%;
@@ -130,5 +169,22 @@ header{
     }
     100% {
         left: -400%;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    #main_nav{
+        visibility: hidden;
+    }
+    #menuIcon{
+        visibility: visible;
+    }
+}
+
+@media only screen and (max-width: 490px){
+    #headerTitle{
+        font-size: 25px;
+        top: 15px;
+        left: 100px
     }
 }
