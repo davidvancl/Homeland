@@ -1,0 +1,70 @@
+body{
+    align-content: center;
+}
+
+#history_data_section{
+    position: relative;
+    top: 40px;
+    width: 95%;
+    margin: 50px auto;
+}
+
+#historyTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th {
+    background: green;
+    color: white;
+    font-weight: bold;
+}
+
+td, th {
+    padding: 20px;
+    border: 1px solid #282c2f;
+    text-align: left;
+}
+
+.GTAFont {
+    font-size: 25px;
+}
+
+@media only screen and (max-width: 730px) {
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        display: none;
+    }
+
+    tr {
+        border: 1px solid #282c2f;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #282c2f;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    td:nth-of-type(1):before { content: "Rok vydání"; }
+    td:nth-of-type(2):before { content: "Název"; }
+    td:nth-of-type(3):before { content: "Vývojář"; }
+    td:nth-of-type(4):before { content: "Platformy"; }
+    td:nth-of-type(5):before { content: "Svět"; }
+    td:nth-of-type(6):before { content: "Rok hry"; }
+}

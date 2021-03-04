@@ -1,105 +1,3 @@
-@font-face {
-    font-family: 'gtaFont';
-    src: url('custom_format.ttf') format('truetype');
-}
-
-body{
-    margin: 0;
-    padding: 0;
-    background-image: url("../Images/background.jpg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    background-color: #282c2f;
-    text-align: center;
-}
-
-footer{
-    position: absolute;
-    background-color: #282c2f;
-    width: 100%;
-    height: 60px;
-}
-
-.GTAFont{
-    font-family: gtaFont, serif;
-    color: white;
-    font-size: 40px;
-}
-
-.navItem{
-    position: relative;
-    float: right;
-    top: 10px;
-    right: 0;
-    margin-top: 0;
-    margin-right: 20px;
-    font-size: 30px;
-}
-
-.navSuvItem{
-    position: relative;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 0;
-    font-size: 30px;
-    margin-top: 10px;
-    float: none;
-}
-
-.navHref{
-    text-decoration: none;
-    margin: 0;
-}
-
-.navItem:hover {
-    color: yellowgreen;
-}
-
-.navItem:after {
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    top: 45px;
-    position: absolute;
-    background: yellowgreen;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-}
-.navItem:hover:after {
-    width: 100%;
-    left: 0;
-}
-
-#headerTitle{
-    position: absolute;
-    left: 110px;
-    top: 5px;
-    margin-top: 0;
-}
-
-#header{
-    z-index: 1;
-}
-
-#headerLogo{
-    position: absolute;
-    top: 0;
-    left: 20px;
-    width: 70px;
-    height: 70px;
-}
-
 #sliderLogo{
     position: absolute;
     width: 25%;
@@ -118,31 +16,6 @@ footer{
     border-bottom-color: #282c2f;
     border-bottom-style: solid;
     margin-bottom: 0;
-}
-
-#sub_nav{
-    width: 100%;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    float: left;
-    align-content: center;
-    text-align: center;
-    z-index: 1;
-    background-color: rgba(40,44,47,0.9);
-    overflow: hidden;
-    transition: all 1s linear;
-}
-
-#menuIcon{
-    position: absolute;
-    float: right;
-    right: 10px;
-    top: 15px;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    visibility: hidden;
 }
 
 #slider figure {
@@ -265,34 +138,13 @@ footer{
     transition: all 1s;
 }
 
-#author_title{
-    position: absolute;
-    margin: 0;
-    top: 5px;
-    left: 10px;
-}
-
 .more_info_button:hover{
     color: yellowgreen;
 }
 
 @media only screen and (max-width: 990px) {
-    #main_nav{
-        visibility: hidden;
-    }
-    #menuIcon{
-        visibility: visible;
-    }
     .article {
         width: 40%;
-    }
-}
-
-@media only screen and (max-width: 490px){
-    #headerTitle{
-        font-size: 25px;
-        top: 15px;
-        left: 100px
     }
 }
 
