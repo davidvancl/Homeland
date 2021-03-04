@@ -54,7 +54,8 @@ td, th {
 
     td:before {
         position: absolute;
-        top: 6px;
+        font-family: gtaFont, serif;
+        top: 20px;
         left: 6px;
         width: 45%;
         padding-right: 10px;

@@ -173,16 +173,16 @@
         </table>
     </section>
 
-<!--    <footer>-->
-<!--        <p id="author_title" class="GTAFont">David Vancl</p>-->
-<!--        <p class="css_validator">-->
-<!--            <a href="http://jigsaw.w3.org/css-validator/check/referer">-->
-<!--                <img style="border:0;width:88px;height:31px"-->
-<!--                     src="http://jigsaw.w3.org/css-validator/images/vcss-blue"-->
-<!--                     alt="Ověřit CSS!" />-->
-<!--            </a>-->
-<!--        </p>-->
-<!--    </footer>-->
+    <footer>
+        <p id="author_title" class="GTAFont">David Vancl</p>
+        <p class="css_validator">
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px"
+                     src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                     alt="Ověřit CSS!" />
+            </a>
+        </p>
+    </footer>
 
     <script>
         function changeMenuVisibility(){
@@ -193,31 +193,31 @@
             }
         }
 
-        let isScreenUnderLimit=false;
-        function onResize() {
-            let width = window.innerWidth;
-            if(width <= 730 && !isScreenUnderLimit) {
-                let removeElements = document.getElementsByClassName("rowspan");
-                let visibleElements = document.getElementsByClassName("hidden");
-                Array.prototype.forEach.call(removeElements, function(element) {
-                    element.rowSpan = 1;
-                });
-                Array.prototype.forEach.call(visibleElements, function(element) {
-                    element.removeAttribute("hidden");
-                });
-                isScreenUnderLimit=true;
-            } else if (width > 730 && isScreenUnderLimit) {
-                let removeElements = document.getElementsByClassName("rowspan");
-                let visibleElements = document.getElementsByClassName("hidden");
-                Array.prototype.forEach.call(removeElements, function(element) {
-                    element.rowSpan = element.getAttribute('data-count');
-                });
-                Array.prototype.forEach.call(visibleElements, function(element) {
-                    element.hidden = true;
-                });
-                isScreenUnderLimit=false;
-            }
-        }
+        //let isScreenUnderLimit=false;
+        // function onResize() {
+        //     let width = window.innerWidth;
+        //     if(width <= 730 && !isScreenUnderLimit) {
+        //         let removeElements = document.getElementsByClassName("rowspan");
+        //         let visibleElements = document.getElementsByClassName("hidden");
+        //         Array.prototype.forEach.call(removeElements, function(element) {
+        //             element.rowSpan = 1;
+        //         });
+        //         Array.prototype.forEach.call(visibleElements, function(element) {
+        //             element.removeAttribute("hidden");
+        //         });
+        //         isScreenUnderLimit=true;
+        //     } else if (width > 730 && isScreenUnderLimit) {
+        //         let removeElements = document.getElementsByClassName("rowspan");
+        //         let visibleElements = document.getElementsByClassName("hidden");
+        //         Array.prototype.forEach.call(removeElements, function(element) {
+        //             element.rowSpan = element.getAttribute('data-count');
+        //         });
+        //         Array.prototype.forEach.call(visibleElements, function(element) {
+        //             element.hidden = true;
+        //         });
+        //         isScreenUnderLimit=false;
+        //     }
+        // }
     </script>
     </body>
 </html>
