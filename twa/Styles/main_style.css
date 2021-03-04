@@ -67,13 +67,6 @@
     }
 }
 
-.css_validator{
-    position: absolute;
-    float: right;
-    right: 10px;
-    bottom: 0px;
-}
-
 .articles {
     width: 90%;
     margin: 50px auto;
