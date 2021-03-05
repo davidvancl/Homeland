@@ -1,0 +1,24 @@
+#formBody{
+    margin: 80px auto;
+    width: 95%;
+    background-color: white;
+    min-height: 500px;
+}
+
+.inputForm{
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom-style: solid;
+    border-bottom-color: yellowgreen;
+}
+
+#contactForm{
+    background-color: red;
+}
+
+@media only screen and (max-width: 730px) {
+    label, input, textarea, select{
+        display: block;
+    }
+}
