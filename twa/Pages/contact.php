@@ -40,6 +40,7 @@
                 <fieldset id="dataSection">
                     <legend>kontaktní údaje</legend>
                     <article id="articleData">
+                        <h3 hidden>kontaktní údaje</h3>
                         <ul style="text-align: left">
                             <li class="infoIcon"><abbr title="Majitel firmy">Daniel Mikuláš</abbr></li>
                             <li>
@@ -76,7 +77,7 @@
                     <label for="email">E-mail</label>
                     <input type="email" name="email" id="email"  autocomplete="off" placeholder="kare.vomacka@gmail.com" required>
                     <label for="gender">Pohlaví</label>
-                    <select name="gender" id="gender" required>
+                    <select name="gender" id="gender">
                         <option>Male</option>
                         <option>Female</option>
                     </select>
@@ -94,6 +95,11 @@
             <p class="css_validator">
                 <a href="http://jigsaw.w3.org/css-validator/check/referer">
                     <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Ověřit CSS!" />
+                </a>
+            </p>
+            <p class="html_validator">
+                <a href="http://validator.w3.org/check?uri=referer">
+                    <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" />
                 </a>
             </p>
         </footer>

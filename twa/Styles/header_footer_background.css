@@ -132,6 +132,13 @@ footer{
     bottom: 0;
 }
 
+.html_validator{
+    position: absolute;
+    float: right;
+    right: 120px;
+    bottom: 0;
+}
+
 #headerTitle{
     position: absolute;
     left: 110px;
