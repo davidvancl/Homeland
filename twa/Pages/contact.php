@@ -32,12 +32,37 @@
         </nav>
 
         <section id="formBody">
-            <h2 class="GTAFont" id="sectionTitle"><a href="">kontaktní údaje</a> / <br id="rem"><a href="#contactForm">kontaktní formulář</a></h2>
-
-            <article>
-
-            </article>
-
+            <h3 class="GTAFont" id="sectionTitle"><a href="#dataForm">kontaktní údaje</a> / <br id="rem"><a href="#contactForm">kontaktní formulář</a></h3>
+            <form id="dataForm">
+                <fieldset id="dataSection">
+                    <legend>kontaktní údaje</legend>
+                    <article id="articleData">
+                        <ul style="text-align: left">
+                            <li class="infoIcon"><abbr title="Majitel firmy">Daniel Mikuláš</abbr></li>
+                            <li>
+                                <ul>
+                                    <li class="telIcon">777 888 999</li>
+                                    <li class="emailIcon">daniel.mikulas@gta.com</li>
+                                </ul>
+                            </li>
+                            <li class="infoIcon"><abbr title="Hlavní vývojář">Pavel Chodník</abbr></li>
+                            <li>
+                                <ul>
+                                    <li class="telIcon">555 555 555</li>
+                                    <li class="emailIcon">pavel.chodnik@gta.com</li>
+                                </ul>
+                            </li>
+                            <li class="infoIcon"><abbr title="Sekretářka">Jana Jupiter</abbr></li>
+                            <li>
+                                <ul>
+                                    <li class="telIcon">123 456 789</li>
+                                    <li class="emailIcon">jana.jupiter@gta.com</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </article>
+                </fieldset>
+            </form>
             <form method="post" action="#" name="contactForm" id="contactForm">
                 <fieldset id="fieldContact">
                     <legend>kontaktní formulář</legend>
@@ -56,8 +81,8 @@
                     <input type="tel" name="phone" id="phone"  autocomplete="off" placeholder="778 998 887" required>
                     <label for="message">Zpráva</label>
                     <textarea name="message" id="message"  autocomplete="off" required></textarea>
+                    <button type="submit" name="send" id="send">Odeslat</button>
                 </fieldset>
-                <input type="submit" name="send" id="send" value="Odeslat">
             </form>
         </section>
 

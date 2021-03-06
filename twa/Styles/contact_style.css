@@ -1,7 +1,6 @@
 #formBody{
     margin: 80px auto;
     width: 95%;
-    /*background-color: rgba(255,255,255,0.5);*/
     border-radius: 10px;
     min-height: 500px;
 }
@@ -27,32 +26,81 @@ textarea {
     height: 150px;
 }
 
-a{
+a {
     text-decoration: none;
     color: #282c2f;
 }
 
 input:focus, select:focus, textarea:focus {
-    border: 5px solid green;
+    border: 3px solid green;
+}
+
+input:hover, select:hover, textarea:hover {
+    border-bottom-color: green;
 }
 
 #message{
     resize: vertical;
+    text-align: left;
 }
 
 #sectionTitle{
     color: #282c2f;
 }
 
-#contactForm{
+#send{
+    width: 95%;
+    height: 50px;
+    color: #282c2f;
+    border-radius: 4px;
+    transition: ease-out 0.3s;
+    font-size: 20px;
+    outline: none;
+    font-family: gtaFont, serif;
+    border: 2px solid yellowgreen;
+    position: relative;
+    background-color: yellowgreen;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#send:hover{
+    color: white;
+    border-color: green;
+}
+
+#send:before{
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: green;
+}
+
+#send:hover:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    z-index: -1;
+}
+
+#contactForm, #dataForm {
     margin: 10px auto;
     align-content: center;
     text-align: center;
     width: 50%;
 }
 
-#fieldContact{
-
+#fieldContact, #dataSection {
+    border: 1px solid yellowgreen;
+    font-family: gtaFont, serif;
+    font-size: 25px;
+    color: #282c2f;
 }
 
 label{
@@ -63,8 +111,39 @@ label{
     display: none;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    padding-left: 1.3em;
+}
+
+li:before{
+    display: inline-block;
+    margin-left: -1.3em;
+    width: 1.3em;
+}
+
+.infoIcon:before {
+    content: "ⓘ";
+}
+
+.telIcon:before {
+    content: "☎";
+}
+
+.emailIcon:before {
+    content: "✉";
+}
+
+#articleData{
+    margin: 10px auto;
+    width: 350px;
+}
+
 @media only screen and (max-width: 730px) {
-    #contactForm {
+    #contactForm, #dataForm {
         width: 95%;
     }
 
@@ -76,3 +155,15 @@ label{
         display: inline;
     }
 }
+
+@media only screen and (max-width: 490px){
+    #fieldContact, #dataSection {
+        border-color: #282c2f;
+    }
+
+    #send{
+        background-color: #282c2f;
+        color: white;
+    }
+}
+
