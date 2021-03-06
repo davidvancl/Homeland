@@ -47,6 +47,10 @@ td, th {
     text-align: center;
 }
 
+#footerText{
+    text-align: center;
+}
+
 @media only screen and (max-width: 730px) {
 
     table, thead, tbody, th, td, tr {
@@ -76,6 +80,10 @@ td, th {
         width: 45%;
         padding-right: 10px;
         white-space: nowrap;
+    }
+
+    #tableFooter{
+        display: none;
     }
 
     td:nth-of-type(1):before { content: "Rok vydání"; }

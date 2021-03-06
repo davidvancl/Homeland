@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="cs">
     <head>
-        <title>Kontaktní formulář</title>
+        <title>Kontakty</title>
         <meta charset="UTF-8">
         <meta name="author" content="David Vancl">
         <meta name="keywords" content="GTA, GTA 5, GTA V,grand theft auto, grand theft auto 5, grand theft auto V, contact, kontakt, formulář">
@@ -14,7 +14,7 @@
     <body onload="preloadTable()">
         <header id="header">
             <img id="headerLogo" src="../Images/header_logo.png" alt="Grand Theft Auto V">
-            <h1 id="headerTitle" class="GTAFont">Kontaktní formulář</h1>
+            <h1 id="headerTitle" class="GTAFont">Kontakty</h1>
             <nav id="main_nav">
                 <a href="history.html" class="navHref"><h2 class="GTAFont navItem">Historie</h2></a>
                 <a href="#" class="navHref"><h2 class="GTAFont navItem">Recenze</h2></a>
@@ -32,32 +32,32 @@
         </nav>
 
         <section id="formBody">
-            <h2>Vyplňte formulář:</h2>
+            <h2 class="GTAFont" id="sectionTitle"><a href="">kontaktní údaje</a> / <br id="rem"><a href="#contactForm">kontaktní formulář</a></h2>
+
+            <article>
+
+            </article>
+
             <form method="post" action="#" name="contactForm" id="contactForm">
-                <label for="name">Jméno</label>
-                <input name="name" id="name" class="inputForm" maxlength="30" autocomplete="off" placeholder="Jméno" required>
-
-                <label for="surname">Přijmení</label>
-                <input type="text" name="surname" id="surname" class="inputForm" maxlength="30" autocomplete="off" placeholder="Přijmení" required>
-
-                <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" class="inputForm" autocomplete="off" placeholder="E-mail" required>
-
-                <label for="gender">Pohlaví</label>
-                <select name="gender" id="gender" required>
-                    <option>Male</option>
-                    <option>Female</option>
-                </select>
-
-                <label for="phone">Telefon</label>
-                <input type="tel" name="phone" id="phone" class="inputForm" autocomplete="off" placeholder="Telefon" required>
-
-                <label for="accept">Souhlas</label>
-                <input type="checkbox" name="accept" id="accept" class="inputForm" autocomplete="off" required>
-
-                <label for="message">Zpráva</label>
-                <textarea cols="50" name="message" id="message" class="inputForm" autocomplete="off" required>
-                </textarea>
+                <fieldset id="fieldContact">
+                    <legend>kontaktní formulář</legend>
+                    <label for="name">Jméno</label>
+                    <input name="name" id="name"  maxlength="30" autocomplete="off" placeholder="Karel" required>
+                    <label for="surname">Přijmení</label>
+                    <input type="text" name="surname" id="surname"  maxlength="30" autocomplete="off" placeholder="Vomáčka" required>
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email"  autocomplete="off" placeholder="kare.vomacka@gmail.com" required>
+                    <label for="gender">Pohlaví</label>
+                    <select name="gender" id="gender" required>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                    <label for="phone">Telefon</label>
+                    <input type="tel" name="phone" id="phone"  autocomplete="off" placeholder="778 998 887" required>
+                    <label for="message">Zpráva</label>
+                    <textarea name="message" id="message"  autocomplete="off" required></textarea>
+                </fieldset>
+                <input type="submit" name="send" id="send" value="Odeslat">
             </form>
         </section>
 
