@@ -14,21 +14,21 @@
     <body>
         <header id="header">
             <img id="headerLogo" src="Images/header_logo.png" alt="Grand Theft Auto V">
-            <h1 id="headerTitle" class="GTAFont">Grand Theft Auto</h1>
+            <h1 id="headerTitle" class="GTAFont">Grand Theft Auto V</h1>
             <nav id="main_nav">
-                <a href="Pages/contact.php" class="navHref"><h2 class="GTAFont navItem">Kontakt</h2></a>
-                <a href="#" class="navHref"><h2 class="GTAFont navItem">Recenze</h2></a>
+                <a href="Pages/contact.html" class="navHref"><h2 class="GTAFont navItem">Kontakt</h2></a>
                 <a href="Pages/history.html" class="navHref"><h2 class="GTAFont navItem">Historie</h2></a>
-                <a href="#" class="navHref"><h2 class="GTAFont navItem">Informace</h2></a>
+                <a href="Pages/gallery.html" class="navHref"><h2 class="GTAFont navItem">Galerie</h2></a>
+                <a href="#" class="navHref"><h2 class="GTAFont navItem actualPage">Úvod</h2></a>
             </nav>
             <img id="menuIcon" src="Images/menu_icon.png" alt="Menu" onclick="changeMenuVisibility()">
         </header>
 
         <nav id="sub_nav" style="height: 0">
-            <a href="Pages/contact.php" class="navHref"><h2 class="GTAFont navItem navSuvItem">Kontakt</h2></a><br>
-            <a href="#" class="navHref"><h2 class="GTAFont navItem navSuvItem">Recenze</h2></a><br>
-            <a href="Pages/history.html" class="navHref"><h2 class="GTAFont navItem navSuvItem">Historie</h2></a>
-            <a href="#" class="navHref"><h2 class="GTAFont navItem navSuvItem">Informace</h2></a><br>
+            <a href="#" class="navHref"><h2 class="GTAFont navItem navSuvItem actualPage">Úvod</h2></a>
+            <a href="Pages/gallery.html" class="navHref"><h2 class="GTAFont navItem navSuvItem">Galerie</h2></a><br>
+            <a href="Pages/history.html" class="navHref"><h2 class="GTAFont navItem navSuvItem">Historie</h2></a><br>
+            <a href="Pages/contact.html" class="navHref"><h2 class="GTAFont navItem navSuvItem">Kontakt</h2></a><br>
         </nav>
 
         <section id="slider">
@@ -169,14 +169,6 @@
                 </a>
             </p>
         </footer>
-        <script>
-            function changeMenuVisibility(){
-                if(document.getElementById("sub_nav").style.height === "0px"){
-                    document.getElementById("sub_nav").style.height = "270px";
-                } else {
-                    document.getElementById("sub_nav").style.height = "0px";
-                }
-            }
-        </script>
+        <script src="Scripts/menu_script.js"></script>
     </body>
 </html>

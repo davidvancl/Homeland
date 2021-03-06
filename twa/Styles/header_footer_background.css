@@ -76,6 +76,10 @@ footer{
     color: yellowgreen;
 }
 
+.actualPage{
+    color: yellowgreen;
+}
+
 .navItem:after {
     bottom: 0;
     content: "";

@@ -51,25 +51,28 @@ input:hover, select:hover, textarea:hover {
 #send{
     width: 95%;
     height: 50px;
-    color: #282c2f;
     border-radius: 4px;
     transition: ease-out 0.3s;
     font-size: 20px;
     outline: none;
     font-family: gtaFont, serif;
-    border: 2px solid yellowgreen;
     position: relative;
-    background-color: yellowgreen;
     z-index: 1;
     cursor: pointer;
+    color: #282c2f;
 }
 
-#send:hover{
+.focusEffect{
+    border: 2px solid yellowgreen;
+    background-color: yellowgreen;
+}
+
+.focusEffect:hover{
     color: white;
     border-color: green;
 }
 
-#send:before{
+.focusEffect:before, .errorEffect:before {
     transition: 0.5s all ease;
     position: absolute;
     top: 0;
@@ -78,15 +81,36 @@ input:hover, select:hover, textarea:hover {
     bottom: 0;
     opacity: 0;
     content: "";
+}
+
+.focusEffect:before {
     background-color: green;
 }
 
-#send:hover:before {
+.errorEffect:before {
+    background-color: red;
+}
+
+.focusEffect:hover:before, .errorEffect:hover:before  {
     transition: 0.5s all ease;
     left: 0;
     right: 0;
     opacity: 1;
     z-index: -1;
+}
+
+.incorrectInput{
+    border: 2px dotted red;
+}
+
+.errorEffect{
+    border: 2px solid orangered;
+    background-color: orangered;
+}
+
+.errorEffect:hover{
+    color: white;
+    border-color: red;
 }
 
 #contactForm, #dataForm {

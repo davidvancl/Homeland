@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!doctype html>
 <html lang="cs">
     <head>
@@ -14,24 +11,24 @@
         <link rel="stylesheet" href="../Styles/header_footer_background.css">
         <link rel="stylesheet" href="../Styles/contact_style.css">
     </head>
-    <body onload="preloadTable()">
+    <body>
         <header id="header">
             <img id="headerLogo" src="../Images/header_logo.png" alt="Grand Theft Auto V">
             <h1 id="headerTitle" class="GTAFont">Kontakty</h1>
             <nav id="main_nav">
+                <a href="#" class="navHref"><h2 class="GTAFont navItem actualPage">Kontakt</h2></a>
                 <a href="history.html" class="navHref"><h2 class="GTAFont navItem">Historie</h2></a>
-                <a href="#" class="navHref"><h2 class="GTAFont navItem">Recenze</h2></a>
+                <a href="gallery.html" class="navHref"><h2 class="GTAFont navItem">Galerie</h2></a>
                 <a href="../index.html" class="navHref"><h2 class="GTAFont navItem">Úvod</h2></a>
-                <a href="#" class="navHref"><h2 class="GTAFont navItem">Informace</h2></a>
             </nav>
             <img id="menuIcon" src="../Images/menu_icon.png" alt="Menu" onclick="changeMenuVisibility()">
         </header>
 
         <nav id="sub_nav" style="height: 0">
-            <a href="history.html" class="navHref"><h2 class="GTAFont navItem navSuvItem">Historie</h2></a><br>
-            <a href="#" class="navHref"><h2 class="GTAFont navItem navSuvItem">Recenze</h2></a><br>
             <a href="../index.html" class="navHref"><h2 class="GTAFont navItem navSuvItem">Úvod</h2></a>
-            <a href="#" class="navHref"><h2 class="GTAFont navItem navSuvItem">Informace</h2></a><br>
+            <a href="gallery.html" class="navHref"><h2 class="GTAFont navItem navSuvItem">Galerie</h2></a><br>
+            <a href="history.html" class="navHref"><h2 class="GTAFont navItem navSuvItem">Historie</h2></a><br>
+            <a href="#" class="navHref"><h2 class="GTAFont navItem navSuvItem actualPage">Kontakt</h2></a><br>
         </nav>
 
         <section id="formBody">
@@ -71,21 +68,21 @@
                 <fieldset id="fieldContact">
                     <legend>kontaktní formulář</legend>
                     <label for="name">Jméno</label>
-                    <input name="name" id="name"  maxlength="30" autocomplete="off" placeholder="Karel" required>
+                    <input name="name" id="name" maxlength="30" autocomplete="off" placeholder="Karel" onchange="checkFormValidity()" required>
                     <label for="surname">Přijmení</label>
-                    <input type="text" name="surname" id="surname"  maxlength="30" autocomplete="off" placeholder="Vomáčka" required>
+                    <input type="text" name="surname" id="surname"  maxlength="30" autocomplete="off" placeholder="Vomáčka" onchange="checkFormValidity()" required>
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email"  autocomplete="off" placeholder="kare.vomacka@gmail.com" required>
+                    <input type="email" name="email" id="email"  autocomplete="off" placeholder="kare.vomacka@gmail.com" onchange="checkFormValidity()" required>
                     <label for="gender">Pohlaví</label>
                     <select name="gender" id="gender">
                         <option>Male</option>
                         <option>Female</option>
                     </select>
                     <label for="phone">Telefon</label>
-                    <input type="tel" name="phone" id="phone"  autocomplete="off" placeholder="778 998 887" required>
+                    <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" autocomplete="off" placeholder="778-998-887" onchange="checkFormValidity()" required>
                     <label for="message">Zpráva</label>
-                    <textarea name="message" id="message"  autocomplete="off" required></textarea>
-                    <button type="submit" name="send" id="send">Odeslat</button>
+                    <textarea name="message" id="message"  autocomplete="off" onchange="checkFormValidity()" required></textarea>
+                    <button type="submit" name="send" id="send" class="errorEffect" disabled>Odeslat</button>
                 </fieldset>
             </form>
         </section>
@@ -104,14 +101,7 @@
             </p>
         </footer>
 
-        <script>
-            function changeMenuVisibility(){
-                if(document.getElementById("sub_nav").style.height === "0px"){
-                    document.getElementById("sub_nav").style.height = "270px";
-                } else {
-                    document.getElementById("sub_nav").style.height = "0px";
-                }
-            }
-        </script>
+        <script src="../Scripts/contact_form_scrip.js"></script>
+        <script src="../Scripts/menu_script.js"></script>
     </body>
 </html>
