@@ -19,24 +19,29 @@
     $password = "GTAService123456*";
     $database = "twa";
 
-    $connection = new mysqli($host, $user, $password,$database);
-    if ($connection->connect_error) {
+    try {
+        $connection = new PDO("mysql:host=$host;dbname=$database", $user, $password);
+        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $connection->exec("set names utf8");
+
+        $statement = $connection->prepare("INSERT INTO `contact_form` VALUES (0, :firstname, :lastname, :email, :gender, :phone, :message)");
+        $statement->bindParam(':firstname', $_POST["name"]);
+        $statement->bindParam(':lastname', $_POST["surname"]);
+        $statement->bindParam(':email', $_POST["email"]);
+        $statement->bindParam(':gender', $_POST["gender"]);
+        $statement->bindParam(':phone', $_POST["phone"]);
+        $statement->bindParam(':message', $_POST["message"]);
+
+        if ($statement->execute()) {
+            header("Location: ../Pages/contact.html?code=200");
+
+            exit();
+        } else {
+            header("Location: ../Pages/contact.html?code=500");
+            exit();
+        }
+
+    } catch (PDOException $ex) {
         header("Location: ../Pages/contact.html?code=420");
-        exit();
-    }
-
-    $query = "INSERT INTO `contact_form` VALUES
-                                  (0,'".$_POST["name"]."',
-                                  '".$_POST["surname"]."',
-                                  '".$_POST["email"]."',
-                                  '".$_POST["gender"]."',
-                                  '".$_POST["phone"]."',
-                                  '".$_POST["message"]."')";
-
-    if ($connection->query($query) === TRUE) {
-        header("Location: ../Pages/contact.html?code=200");
-        exit();
-    } else {
-        header("Location: ../Pages/contact.html?code=500");
         exit();
     }
