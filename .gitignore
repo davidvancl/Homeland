@@ -2,6 +2,9 @@
 */.idea
 */.vscode
 
+*/Sounds
+*/Images
+
 pull.sh
 push.sh
 twa_version.conf
