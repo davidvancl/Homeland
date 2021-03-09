@@ -54,7 +54,11 @@
 }
 
 @media only screen and (max-width: 730px) {
-    #content{
+    #container{
         width: 100%;
+    }
+
+    .player{
+        margin: 10px auto;
     }
 }

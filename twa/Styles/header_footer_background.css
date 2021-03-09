@@ -30,7 +30,7 @@ footer{
 }
 
 #header{
-    z-index: 1;
+    z-index: 4;
 }
 
 #headerLogo{
@@ -105,7 +105,7 @@ footer{
     float: left;
     align-content: center;
     text-align: center;
-    z-index: 1;
+    z-index: 3;
     background-color: rgba(40,44,47,0.9);
     overflow: hidden;
     transition: all 1s linear;
@@ -179,7 +179,6 @@ footer{
         left: 100px
     }
     body{
-        background-image: none;
-        background-color: yellowgreen;
+        background-image: url("../Images/mobile_background.jpg");
     }
 }
