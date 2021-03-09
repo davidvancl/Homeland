@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="../Styles/header_footer_background.css">
         <link rel="stylesheet" href="../Styles/gallery_style.css">
     </head>
-    <body onload="preloadTable()">
+    <body onload="changeDefaultVolume()">
         <header id="header">
             <img id="headerLogo" src="../Images/header_logo.png" alt="Grand Theft Auto V">
             <h1 id="headerTitle" class="GTAFont">Grand Theft Auto V</h1>
@@ -50,7 +50,41 @@
                 </li>
             </ul>
         </nav>
+        
+        <section id="container">
 
-    <script src="../Scripts/menu_script.js"></script>
+            <article class="player">
+                <h3 class="audioTitle">Modjo - Lady Hear Me Tonight</h3>
+                <aside class="image">
+                    <img src="../Images/icon.JPEG" alt="">
+                </aside>
+                <audio class="audio" controls>
+                    <source src="../Sounds/theme_song.mp3" type="audio/mp3">
+                </audio>
+            </article>
+
+            <article class="player">
+                <h3 class="audioTitle">Modjo - Lady Hear Me Tonight</h3>
+                <aside class="image">
+                    <img src="../Images/non-stop.jpg" alt="">
+                </aside>
+                <audio class="audio" controls>
+                    <source src="../Sounds/soundtrack1.mp3" type="audio/mp3">
+                </audio>
+            </article>
+
+            <article class="player">
+                <h3 class="audioTitle">Kelly Rowland - Work </h3>
+                <aside class="image">
+                    <img src="../Images/non-stop.jpg" alt="">
+                </aside>
+                <audio class="audio" controls>
+                    <source src="../Sounds/soundtrack2.mp3" type="audio/mp3">
+                </audio>
+            </article>
+        </section>
+
+        <script src="../Scripts/menu_script.js"></script>
+        <script src="../Scripts/gallery_script.js"></script>
     </body>
 </html>
