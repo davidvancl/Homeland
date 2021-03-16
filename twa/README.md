@@ -1,5 +1,4 @@
-# Grand Theft Auto V - TWA
-## Body obsažené v semestrálním projektu
+# Grand Theft Auto V - TWA (Body obsažené v semestrálním projektu)
 #### Požadavky na HTML:
 - [X] oddělené záhlaví, zápatí menu a obsah, vytvořené pomocí sémantických elementů HTML5
 - Každá stránka obsahuje záklaví (nadpis stránky), navigační menu, tělo, zápatí(odkazy a citace)
