@@ -34,7 +34,6 @@
 
         if ($statement->execute()) {
             header("Location: ../Pages/contact.html?code=200");
-
             exit();
         } else {
             header("Location: ../Pages/contact.html?code=500");

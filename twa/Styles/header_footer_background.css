@@ -26,7 +26,8 @@ footer{
     position: absolute;
     background-color: #282c2f;
     width: 100%;
-    height: 60px;
+    min-height: 60px;
+    height: auto;
 }
 
 #header{
@@ -124,6 +125,7 @@ footer{
 
 #author_title{
     position: absolute;
+    font-size: 20px;
     margin: 0;
     top: 5px;
     left: 10px;
@@ -133,14 +135,14 @@ footer{
     position: absolute;
     float: right;
     right: 10px;
-    bottom: 0;
+    top: 0;
 }
 
 .html_validator{
     position: absolute;
     float: right;
     right: 120px;
-    bottom: 0;
+    top: 0;
 }
 
 #headerTitle{
@@ -163,6 +165,13 @@ footer{
     margin: 0;
 }
 
+.cite{
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: white;
+}
+
 @media only screen and (max-width: 990px) {
     #menuIcon{
         visibility: visible;
@@ -180,5 +189,8 @@ footer{
     }
     body{
         background-image: url("../Images/mobile_background.jpg");
+    }
+    .cite{
+        margin-top: 50px;
     }
 }

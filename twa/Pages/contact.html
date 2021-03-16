@@ -11,23 +11,23 @@
         <link rel="stylesheet" href="../Styles/header_footer_background.css">
         <link rel="stylesheet" href="../Styles/contact_style.css">
     </head>
-    <body>
+    <body onload="checkForErrors();">
         <header id="header">
             <img id="headerLogo" src="../Images/header_logo.png" alt="Grand Theft Auto V">
             <h1 id="headerTitle" class="GTAFont">Kontakty</h1>
             <nav id="main_nav">
                 <ul id="menuStyle">
                     <li>
-                        <a href="#" class="navHref"><h2 class="GTAFont navItem actualPage">Kontakt</h2></a>
+                        <a href="" class="navHref"><h2 class="GTAFont navItem actualPage">Kontakt</h2></a>
                     </li>
                     <li>
-                        <a href="history.html" class="navHref"><h2 class="GTAFont navItem">Historie</h2></a>
+                        <a href="../historie/" class="navHref"><h2 class="GTAFont navItem">Historie</h2></a>
                     </li>
                     <li>
-                        <a href="gallery.html" class="navHref"><h2 class="GTAFont navItem">Galerie</h2></a>
+                        <a href="../galerie/" class="navHref"><h2 class="GTAFont navItem">Galerie</h2></a>
                     </li>
                     <li>
-                        <a href="../index.html" class="navHref"><h2 class="GTAFont navItem">Úvod</h2></a>
+                        <a href="../" class="navHref"><h2 class="GTAFont navItem">Úvod</h2></a>
                     </li>
                 </ul>
             </nav>
@@ -37,20 +37,20 @@
         <nav id="sub_nav" style="height: 0">
             <ul id="menuSubStyle">
                 <li>
-                    <a href="../index.html" class="navHref"><h2 class="GTAFont navItem navSuvItem">Úvod</h2></a>
+                    <a href="../" class="navHref"><h2 class="GTAFont navItem navSuvItem">Úvod</h2></a>
                 </li>
                 <li>
-                    <a href="gallery.html" class="navHref"><h2 class="GTAFont navItem navSuvItem">Galerie</h2></a>
+                    <a href="../galerie/" class="navHref"><h2 class="GTAFont navItem navSuvItem">Galerie</h2></a>
                 </li>
                 <li>
-                    <a href="history.html" class="navHref"><h2 class="GTAFont navItem navSuvItem">Historie</h2></a>
+                    <a href="../historie/" class="navHref"><h2 class="GTAFont navItem navSuvItem">Historie</h2></a>
                 </li>
                 <li>
-                    <a href="#" class="navHref"><h2 class="GTAFont navItem navSuvItem actualPage">Kontakt</h2></a>
+                    <a href="" class="navHref"><h2 class="GTAFont navItem navSuvItem actualPage">Kontakt</h2></a>
                 </li>
             </ul>
         </nav>
-
+        <div id="errorMessage" hidden> </div>
         <section id="formBody">
             <h3 class="GTAFont" id="sectionTitle"><a href="#dataForm">kontaktní údaje</a> / <br id="rem"><a href="#contactForm">kontaktní formulář</a></h3>
             <form id="dataForm">

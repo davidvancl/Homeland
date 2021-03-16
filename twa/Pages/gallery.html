@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="../Styles/header_footer_background.css">
         <link rel="stylesheet" href="../Styles/gallery_style.css">
     </head>
+
     <body onload="changeDefaultVolume()">
         <header id="header">
             <img id="headerLogo" src="../Images/header_logo.png" alt="Grand Theft Auto V">
@@ -18,16 +19,16 @@
             <nav id="main_nav">
                 <ul id="menuStyle">
                     <li>
-                        <a href="contact.html" class="navHref"><h2 class="GTAFont navItem">Kontakt</h2></a>
+                        <a href="../kontakt/" class="navHref"><h2 class="GTAFont navItem">Kontakt</h2></a>
                     </li>
                     <li>
-                        <a href="history.html" class="navHref"><h2 class="GTAFont navItem">Historie</h2></a>
+                        <a href="../historie/" class="navHref"><h2 class="GTAFont navItem">Historie</h2></a>
                     </li>
                     <li>
-                        <a href="#" class="navHref"><h2 class="GTAFont navItem actualPage">Galerie</h2></a>
+                        <a href="" class="navHref"><h2 class="GTAFont navItem actualPage">Galerie</h2></a>
                     </li>
                     <li>
-                        <a href="../index.html" class="navHref"><h2 class="GTAFont navItem">Úvod</h2></a>
+                        <a href="../" class="navHref"><h2 class="GTAFont navItem">Úvod</h2></a>
                     </li>
                 </ul>
             </nav>
@@ -37,28 +38,71 @@
         <nav id="sub_nav" style="height: 0">
             <ul id="menuSubStyle">
                 <li>
-                    <a href="../index.html" class="navHref"><h2 class="GTAFont navItem navSuvItem">Úvod</h2></a>
+                    <a href="../" class="navHref"><h2 class="GTAFont navItem navSuvItem">Úvod</h2></a>
                 </li>
                 <li>
-                    <a href="#" class="navHref"><h2 class="GTAFont navItem navSuvItem actualPage">Galerie</h2></a>
+                    <a href="" class="navHref"><h2 class="GTAFont navItem navSuvItem actualPage">Galerie</h2></a>
                 </li>
                 <li>
-                    <a href="history.html" class="navHref"><h2 class="GTAFont navItem navSuvItem">Historie</h2></a>
+                    <a href="../historie/" class="navHref"><h2 class="GTAFont navItem navSuvItem">Historie</h2></a>
                 </li>
                 <li>
-                    <a href="contact.html" class="navHref"><h2 class="GTAFont navItem navSuvItem">Kontakt</h2></a>
+                    <a href="../kontakt/" class="navHref"><h2 class="GTAFont navItem navSuvItem">Kontakt</h2></a>
                 </li>
             </ul>
         </nav>
 
         <nav id="galleryNav">
-            Nav panel
+            <ol>
+                <li class="mainS">
+                    <details>
+                        <summary>Hudba</summary>
+                        <ol>
+                            <li><a href="#wtls">Welcome to Los Santos</a></li>
+                            <li><a href="#lhmt">Modjo - Lady Hear Me Tonight</a></li>
+                            <li><a href="#work">Kelly Rowland - Work</a></li>
+                            <li><a href="#sa">San Andreas</a></li>
+                            <li><a href="#tdch">The Diamond Casino Heist</a></li>
+                            <li><a href="#bbsb">Bronski Beat - Smalltown Boy</a></li>
+                            <li><a href="#rrb">Ace Hood feat. Future and Rick Ross – Bugatti</a></li>
+                            <li><a href="#crotn">Corona - Rhythm of the night</a></li>
+                            <li><a href="#bbii">Backstreet Boys – I Want It That Way</a></li>
+                        </ol>
+                    </details>
+                </li>
+                <li class="mainS">
+                    <details>
+                        <summary>Obrázky</summary>
+                        <ol>
+                            <li><a href="#image1">Obrázek 1</a></li>
+                            <li><a href="#image2">Obrázek 2</a></li>
+                            <li><a href="#image3">Obrázek 3</a></li>
+                            <li><a href="#image4">Obrázek 4</a></li>
+                            <li><a href="#image5">Obrázek 5</a></li>
+                            <li><a href="#image6">Obrázek 6</a></li>
+                            <li><a href="#image7">Obrázek 7</a></li>
+                            <li><a href="#image8">Obrázek 8</a></li>
+                            <li><a href="#image9">Obrázek 9</a></li>
+                        </ol>
+                    </details>
+                </li>
+                <li class="mainS">
+                    <details>
+                        <summary>Videa</summary>
+                        <ol>
+                            <li><a href="#official_v">Grand Theft Auto V: Official Gameplay Video</a></li>
+                            <li><a href="#the_diamond">GTA Online: The Diamond Casino & Resort</a></li>
+                            <li><a href="#the_doomsday">GTA Online: The Doomsday Heist Official Trailer</a></li>
+                        </ol>
+                    </details>
+                </li>
+            </ol>
         </nav>
 
         <section id="audioContainer">
             <a href="#" style="text-decoration: none"><h3 class="titleSection">Hudba ze hry</h3></a>
             <div class="container">
-                <article class="player">
+                <article id="wtls" class="player">
                     <h3 class="audioTitle">Welcome to Los Santos</h3>
                     <aside class="image">
                         <img src="../Images/icon.JPEG" alt="">
@@ -68,7 +112,7 @@
                     </audio>
                 </article>
 
-                <article class="player">
+                <article id="lhmt" class="player">
                     <h3 class="audioTitle">Modjo - Lady Hear Me Tonight</h3>
                     <aside class="image">
                         <img src="../Images/non-stop.jpg" alt="">
@@ -78,7 +122,7 @@
                     </audio>
                 </article>
 
-                <article class="player">
+                <article id="work" class="player">
                     <h3 class="audioTitle">Kelly Rowland - Work </h3>
                     <aside class="image">
                         <img src="../Images/non-stop.jpg" alt="">
@@ -88,7 +132,7 @@
                     </audio>
                 </article>
 
-                <article class="player">
+                <article id="sa" class="player">
                     <h3 class="audioTitle">San Andreas</h3>
                     <aside class="image">
                         <img src="../Images/san_andreas.jpg" alt="">
@@ -98,7 +142,7 @@
                     </audio>
                 </article>
 
-                <article class="player">
+                <article id="tdch" class="player">
                     <h3 class="audioTitle">The Diamond Casino Heist</h3>
                     <aside class="image">
                         <img src="../Images/casino.jpg" alt="">
@@ -108,7 +152,7 @@
                     </audio>
                 </article>
 
-                <article class="player">
+                <article id="bbsb" class="player">
                     <h3 class="audioTitle">Bronski Beat - Smalltown Boy</h3>
                     <aside class="image">
                         <img src="../Images/non-stop.jpg" alt="">
@@ -118,7 +162,7 @@
                     </audio>
                 </article>
 
-                <article class="player">
+                <article id="rrb" class="player">
                     <h3 class="audioTitle">Ace Hood feat. Future and Rick Ross – Bugatti</h3>
                     <aside class="image">
                         <img src="../Images/lsur.jpg" alt="">
@@ -128,7 +172,7 @@
                     </audio>
                 </article>
 
-                <article class="player">
+                <article id="crotn" class="player">
                     <h3 class="audioTitle">Corona - Rhythm of the night</h3>
                     <aside class="image">
                         <img src="../Images/non-stop.jpg" alt="">
@@ -138,7 +182,7 @@
                     </audio>
                 </article>
 
-                <article class="player">
+                <article id="bbii" class="player">
                     <h3 class="audioTitle">Backstreet Boys – I Want It That Way</h3>
                     <aside class="image">
                         <img src="../Images/non-stop.jpg" alt="">
@@ -153,70 +197,70 @@
         <section id="imageSection">
             <a href="#" style="text-decoration: none"><h3 class="titleSection">Obrázky ze hry</h3></a>
             <div class="container image_flex">
-                <article class="image_box">
-                    <h4 hidden>image1</h4>
+                <figure id="image1" class="image_box">
                     <img src="../Images/Gallery/image1.jpg" alt="">
-                </article>
+                    <figcaption>image1</figcaption>
+                </figure>
 
-                <article class="image_box">
-                    <h4 hidden>image2</h4>
+                <figure id="image2" class="image_box">
                     <img src="../Images/Gallery/image2.jpg" alt="">
-                </article>
+                    <figcaption>image2</figcaption>
+                </figure>
 
-                <article class="image_box">
-                    <h4 hidden>image3</h4>
+                <figure id="image3" class="image_box">
                     <img src="../Images/Gallery/image3.jpg" alt="">
-                </article>
+                    <figcaption>image3</figcaption>
+                </figure>
 
-                <article class="image_box">
-                    <h4 hidden>image4</h4>
+                <figure id="image4" class="image_box">
                     <img src="../Images/Gallery/image4.jpg" alt="">
-                </article>
+                    <figcaption>image4</figcaption>
+                </figure>
 
-                <article class="image_box">
-                    <h4 hidden>image5</h4>
+                <figure id="image5" class="image_box">
                     <img src="../Images/Gallery/image5.jpg" alt="">
-                </article>
+                    <figcaption>image5</figcaption>
+                </figure>
 
-                <article class="image_box">
-                    <h4 hidden>image6</h4>
+                <figure id="image6" class="image_box">
                     <img src="../Images/Gallery/image6.jpg" alt="">
-                </article>
+                    <figcaption>image6</figcaption>
+                </figure>
 
-                <article class="image_box">
-                    <h4 hidden>image7</h4>
+                <figure id="image7" class="image_box">
                     <img src="../Images/Gallery/image7.jpg" alt="">
-                </article>
+                    <figcaption>image7</figcaption>
+                </figure>
 
-                <article class="image_box">
-                    <h4 hidden>image8</h4>
+                <figure id="image8" class="image_box">
                     <img src="../Images/Gallery/image8.jpg" alt="">
-                </article>
+                    <figcaption>image8</figcaption>
+                </figure>
 
-                <article class="image_box">
-                    <h4 hidden>image9</h4>
+                <figure id="image9" class="image_box">
                     <img src="../Images/Gallery/image9.jpg" alt="">
-                </article>
+                    <figcaption>image9</figcaption>
+                </figure>
             </div>
         </section>
 
         <section id="videoContainer">
             <a href="#" style="text-decoration: none"><h3 class="titleSection">Videa ze hry</h3></a>
-            <article class="video_box">
+            <article id="official_v" class="video_box">
                 <h4 class="videoTitle">Grand Theft Auto V: Official Gameplay Video</h4>
                 <video style="width: 100%" controls>
                     <source src="../Videos/official_gameplay.mp4" type="video/mp4">
                 </video>
             </article>
 
-            <article class="video_box">
+            <article id="the_diamond" class="video_box">
                 <h4 class="videoTitle">GTA Online: The Diamond Casino & Resort</h4>
                 <video style="width: 100%" controls>
                     <source src="../Videos/casino_heist.mp4" type="video/mp4">
                 </video>
             </article>
 
-            <article class="video_box">
+            <article id="the_doomsday" class="video_box">
                 <h4 class="videoTitle">GTA Online: The Doomsday Heist Official Trailer</h4>
                 <video style="width: 100%" controls>
                     <source src="../Videos/doomsday_heist.mp4" type="video/mp4">
@@ -236,6 +280,12 @@
                     <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88" />
                 </a>
             </p>
+
+            <ol class="cite">
+                <li>
+                    <cite>Non-Stop-Pop FM. YouTube [online]. [cit. 2021-03-16]. Dostupné z: https://www.youtube.com/watch?v=3_yZC9pa-ug&list=PLgbI0QcBNn5isOvlIN0rRK9Y6bSQdheii</cite>
+                </li>
+            </ol>
         </footer>
 
         <script src="../Scripts/menu_script.js"></script>

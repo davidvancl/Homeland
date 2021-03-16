@@ -1,6 +1,6 @@
 #audioContainer, #videoContainer, #imageSection, #galleryNav {
     position: relative;
-    margin: 90px auto;
+    margin: 50px auto;
     width: 95%;
     align-items: center;
 }
@@ -9,6 +9,10 @@
     width: 60%;
     display: block;
     margin: 20px auto;
+}
+
+#galleryNav{
+    align-content: center;
 }
 
 .videoTitle{
@@ -87,17 +91,78 @@
     background-color: green;
     color: white;
     text-align: center;
-    border-radius: 40px;
     font-size: 40px;
+    margin-top: 0;
+}
+
+#galleryNav{
+    background-color: #282c2f;
+    border-bottom: 2px solid yellowgreen;
+    height: 10px;
+    margin-top: 90px;
+    overflow: hidden;
+}
+
+#galleryNav:hover{
+    height: auto;
+}
+
+#galleryNav ol {
+    counter-reset: item;
+    font-family: gtaFont, serif;
+    font-size: 25px;
+    color: white;
+}
+
+#galleryNav ol li:before{
+    font-weight: bold;
+    font-size: 25px;
+    margin-right: 0.5rem;
+    line-height: 1;
+    position: relative;
+}
+
+.mainS:before {
+    left: -25px;
+    top: 25px;
+}
+
+#galleryNav li {
+    display: block;
+}
+
+#galleryNav li:before {
+    content: counters(item, ".") " "; counter-increment: item
+}
+
+#galleryNav a{
+    text-decoration: none;
+}
+
+#galleryNav a:visited{
+    color: darkgreen;
+}
+
+#galleryNav a:link{
+    color: yellowgreen;
+}
+
+#galleryNav a:hover{
+    color: white;
+}
+
+#galleryNav {
+    height: 10px;
 }
 
 @media only screen and (max-width: 900px) {
     .image_box {
         width: 100%;
+        margin: 0;
     }
 
     .image_box img{
-        height: 400px;
+        width: 100%;
     }
 
     .image_flex {

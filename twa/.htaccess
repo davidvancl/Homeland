@@ -1,6 +1,17 @@
 DirectoryIndex index.php index.html
 
 <IfModule mod_rewrite.c>
+    Options +FollowSymLinks
     RewriteEngine On
-    RewriteBase /
+
+    ErrorDocument 404 ./index.html
+
+    RewriteCond %{REMOTE_ADDR} ^192\.168\.2\.206$
+    RewriteRule .* /index.php [R=301,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+
+    RewriteRule ^historie/$ ./Pages/history.html
+    RewriteRule ^kontakt/$ ./Pages/contact.html
+    RewriteRule ^galerie/$ ./Pages/gallery.html
 </IfModule>

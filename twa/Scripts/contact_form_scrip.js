@@ -50,3 +50,34 @@ function checkFormValidity() {
         element.disabled = true;
     }
 }
+
+function checkForErrors(){
+    if (window.location.search !== ""){
+
+        let errorElement = document.getElementById("errorMessage");
+        switch ((new URL(window.location.href)).searchParams.get("code")){
+            case "400":
+                errorElement.style.backgroundColor = "red";
+                errorElement.innerHTML = "Špatně vyplněné nebo chybně odeslané parametry";
+                break;
+            case "200":
+                errorElement.style.backgroundColor = "green";
+                errorElement.innerHTML = "Úspěšně odesláno";
+                break;
+            case "500":
+                errorElement.style.backgroundColor = "red";
+                errorElement.innerHTML = "Chyba při zápisu do databáze";
+                break;
+            default:
+                errorElement.style.backgroundColor = "red";
+                errorElement.innerHTML = "Chyba při připojení do databáze";
+                break
+        }
+
+        errorElement.removeAttribute("hidden");
+        setTimeout(function(){
+            errorElement.setAttribute("hidden","1");
+            window.location.href = window.location.href.substr(0, window.location.href.indexOf('twa/')) + "twa/kontakt/";
+            }, 3000);
+    }
+}
