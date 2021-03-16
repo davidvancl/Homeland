@@ -2,9 +2,9 @@
 */.idea
 */.vscode
 
-*/Videos
-*/Sounds
-*/Images
+*/Videos/*
+*/Sounds/*
+*/Images/*
 
 pull.sh
 push.sh
