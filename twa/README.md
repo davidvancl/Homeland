@@ -1,21 +1,21 @@
 # Grand Theft Auto V - TWA
 # Body obsažené v semestrálním projektu
-        oddělené záhlaví, zápatí menu a obsah, vytvořené pomocí sémantických elementů HTML5
-        menu vytvořené pomocí seznamu s příslušným stylem,
-        odstavce a nadpisy 1 - 3 úrovně,
-        číslovaný a nečíslovaný seznam (každý minimálně celkem 7 položek ve dvou úrovních),
-        odkazy z textu obsahu a odkazy na fragment stránky,
-        minimálně 3 obrázky jako součást hlavního obsahu stránky,
-        tabulku s popiskem a záhlavím, využívající spojování buněk v horizontálním i vertikálním směru,
-        formulář obsahující minimálně 3 viditelné elementy, využívající fieldset, legend a label,
-        syntakticky vyznačené zvýraznění a zkratky (em, strong, abbr).
-        barva písma a pozadí
-        font a velikost písma
-        nastavení chování odkazů (navštívený, aktivní, ...)
-        nadpisy
-    CSS předpisem bude zajištěno responzivní chování stránky ve dvou úrovních 
-        flexibilní rozložení obsahu v závislosti na rozlišení
-        responzivní menu
+[X] oddělené záhlaví, zápatí menu a obsah, vytvořené pomocí sémantických elementů HTML5
+menu vytvořené pomocí seznamu s příslušným stylem,
+odstavce a nadpisy 1 - 3 úrovně,
+číslovaný a nečíslovaný seznam (každý minimálně celkem 7 položek ve dvou úrovních),
+odkazy z textu obsahu a odkazy na fragment stránky,
+minimálně 3 obrázky jako součást hlavního obsahu stránky,
+tabulku s popiskem a záhlavím, využívající spojování buněk v horizontálním i vertikálním směru,
+formulář obsahující minimálně 3 viditelné elementy, využívající fieldset, legend a label,
+syntakticky vyznačené zvýraznění a zkratky (em, strong, abbr).
+barva písma a pozadí
+font a velikost písma
+nastavení chování odkazů (navštívený, aktivní, ...)
+nadpisy
+CSS předpisem bude zajištěno responzivní chování stránky ve dvou úrovních 
+flexibilní rozložení obsahu v závislosti na rozlišení
+responzivní menu
 
 Pro získání lepšího hodnocení nebo v případě nedostatku bodů ze základního zadání lze získat dodatečné body splněním rozšiřujících úkolů:
 
