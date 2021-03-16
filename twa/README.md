@@ -1,6 +1,7 @@
 # Grand Theft Auto V - TWA
 ## Body obsažené v semestrálním projektu
 - [X] oddělené záhlaví, zápatí menu a obsah, vytvořené pomocí sémantických elementů HTML5
+- Každá stránka obsahuje záklaví (nadpis stránky), navigační menu, tělo, zápatí(odkazy a citace)
 menu vytvořené pomocí seznamu s příslušným stylem,
 odstavce a nadpisy 1 - 3 úrovně,
 číslovaný a nečíslovaný seznam (každý minimálně celkem 7 položek ve dvou úrovních),
