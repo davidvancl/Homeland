@@ -21,6 +21,8 @@
 - [X] syntakticky vyznačené zvýraznění a zkratky (em, strong, abbr)
 - doplňky textu jsou na hlavní stránce v jhednotlivých článkách, (abbr - na "kontakty" jako zvýraznění pozice zaměstnance)
 
+---
+
 #### Požadavky na CSS:
 - [X] barva písma a pozadí
 - každá stránka má rozdílné pozadí pro desktop a pro mobily (každé specificky upravené pro dané rozlišení)
@@ -38,6 +40,8 @@
 - [X] responzivní menu
 - pro desktop je menu v header, pro uživatele jednodušší
 - na mobilu je pod header aby nemuselo být zbytečně malé a nenarušovalo header panel, tak je pod header připojen s možností rozkliku
+
+---
 
 #### rozšiřující úkoly:
 - [X] HTML5 média (audio, video, figure)
