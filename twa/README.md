@@ -1,25 +1,25 @@
 # Grand Theft Auto V - TWA (Body obsažené v semestrálním projektu)
 #### Požadavky na HTML:
-- [X] oddělené záhlaví, zápatí menu a obsah, vytvořené pomocí sémantických elementů HTML5
-- Každá stránka obsahuje záklaví (nadpis stránky), navigační menu, tělo, zápatí(odkazy a citace)
-- [X] menu vytvořené pomocí seznamu s příslušným stylem
-- Pro desktop je menu v záhlaví stránky, pro mobily jse pod záhlavím (seznam je využit bez dekorativních doplňků)
-- [X] odstavce a nadpisy 1 - 3 úrovně
-- Nadpisy jsou využívány dle důležitosti H1 - H4 po celém projektu
-- [X] číslovaný a nečíslovaný seznam (každý minimálně celkem 7 položek ve dvou úrovních)
-- číslovaný seznam na stránce "galerie" jako navigační panel u obrázků a videí
-- nečíslovaný seznam na stránce "kontakty" jako zobrazení pracovníků (upravené dekorace)
-- [X] odkazy z textu obsahu a odkazy na fragment stránky
-- odkazy na fragmenty stánky jsou na stránce "galerie" v podobě navigačního panelu
-- odkazy na jiné stránky jsou př. na "úvodní stránce" u článků jako "přečtěte si více"
-- [X] minimálně 3 obrázky jako součást hlavního obsahu stránky
-- obrázky jsou na "úvodní" stránce v promítání, nebo v "galerii"
-- [X] tabulku s popiskem a záhlavím, využívající spojování buněk v horizontálním i vertikálním směru
-- tabulka je dostupná na stránce "historie" (slévání sloupečků a řádků proběhne v ránci JS, kvůli responsivitě na mobilní zařízení)
-- [X] formulář obsahující minimálně 3 viditelné elementy, využívající fieldset, legend a label
-- na stránce "kontakty", formulář zpracovávající inforace a ulkádá je do DB
-- [X] syntakticky vyznačené zvýraznění a zkratky (em, strong, abbr)
-- doplňky textu jsou na hlavní stránce v jhednotlivých článkách, (abbr - na "kontakty" jako zvýraznění pozice zaměstnance)
+- [X] Oddělené záhlaví, zápatí menu a obsah, vytvořené pomocí sémantických elementů HTML5.
+- Každá stránka obsahuje **záklaví** *(nadpis stránky)*, **navigační menu**, **tělo**, **zápatí** *(odkazy a citace)*
+- [X] Menu vytvořené pomocí seznamu s příslušným stylem.
+- Pro desktop je menu v **záhlaví** stránky, pro mobily jse pod **záhlavím** *(seznam je využit bez dekorativních doplňků)*
+- [X] Odstavce a nadpisy 1 - 3 úrovně.
+- Nadpisy jsou využívány dle důležitosti **H1 - H4** po celém projektu
+- [X] Číslovaný a nečíslovaný seznam *(každý minimálně celkem 7 položek ve dvou úrovních)*.
+- **číslovaný** seznam na stránce [Galerie](https://github.com/davidvancl/Homeland/blob/master/twa/Pages/gallery.html) jako navigační panel u obrázků a videí
+- **nečíslovaný** seznam na stránce [Kontakty](https://github.com/davidvancl/Homeland/blob/master/twa/Pages/contact.html) jako zobrazení pracovníků *(upravené dekorace)*
+- [X] Odkazy z textu obsahu a odkazy na fragment stránky.
+- odkazy na **fragmenty** stánky jsou na stránce [Galerie](https://github.com/davidvancl/Homeland/blob/master/twa/Pages/gallery.html) v podobě navigačního panelu
+- odkazy na **jiné stránky** jsou př. na [Úvod](https://github.com/davidvancl/Homeland/blob/master/twa/index.html) u článků jako *přečtěte si více*
+- [X] Minimálně 3 obrázky jako součást hlavního obsahu stránky.
+- obrázky jsou na [Úvodní](https://github.com/davidvancl/Homeland/blob/master/twa/index.html) stránce v promítání, nebo v [Galerie](https://github.com/davidvancl/Homeland/blob/master/twa/Pages/gallery.html)
+- [X] Tabulku s popiskem a záhlavím, využívající spojování buněk v horizontálním i vertikálním směru.
+- tabulka je dostupná na stránce [Úvod](https://github.com/davidvancl/Homeland/blob/master/twa/Pages/history.html) *(slévání sloupečků a řádků proběhne v ránci JS, kvůli responsivitě na mobilní zařízení)*
+- [X] Formulář obsahující minimálně 3 viditelné elementy, využívající fieldset, legend a label.
+- na stránce [Kontakty](https://github.com/davidvancl/Homeland/blob/master/twa/Pages/contact.html), formulář zpracovávající inforace a ulkádá je do DB
+- [X] Syntakticky vyznačené zvýraznění a zkratky (em, strong, abbr).
+- doplňky textu jsou na [Úvodní stránce](https://github.com/davidvancl/Homeland/blob/master/twa/index.html) v jednotlivých článkách, *(abbr - na [Kontakty](https://github.com/davidvancl/Homeland/blob/master/twa/Pages/contact.html) jako zvýraznění pozice zaměstnance)*
 
 ---
 
