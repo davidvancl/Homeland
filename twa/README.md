@@ -15,7 +15,7 @@
 - [X] Minimálně 3 obrázky jako součást hlavního obsahu stránky.
 - obrázky jsou na [Úvodní](https://github.com/davidvancl/Homeland/blob/master/twa/index.html) stránce v promítání, nebo v [Galerie](https://github.com/davidvancl/Homeland/blob/master/twa/Pages/gallery.html)
 - [X] Tabulku s popiskem a záhlavím, využívající spojování buněk v horizontálním i vertikálním směru.
-- tabulka je dostupná na stránce [Úvod](https://github.com/davidvancl/Homeland/blob/master/twa/Pages/history.html) *(slévání sloupečků a řádků proběhne v ránci JS, kvůli responsivitě na mobilní zařízení)*
+- tabulka je dostupná na stránce [Historie](https://github.com/davidvancl/Homeland/blob/master/twa/Pages/history.html) *(slévání sloupečků a řádků proběhne v ránci JS, kvůli responsivitě na mobilní zařízení)*
 - [X] Formulář obsahující minimálně 3 viditelné elementy, využívající fieldset, legend a label.
 - na stránce [Kontakty](https://github.com/davidvancl/Homeland/blob/master/twa/Pages/contact.html), formulář zpracovávající inforace a ulkádá je do DB
 - [X] Syntakticky vyznačené zvýraznění a zkratky (em, strong, abbr).
@@ -24,21 +24,21 @@
 ---
 
 #### Požadavky na CSS:
-- [X] barva písma a pozadí
-- každá stránka má rozdílné pozadí pro desktop a pro mobily (každé specificky upravené pro dané rozlišení)
-- barva písma (skoro každý prvek, kde je text)
-- [X] font a velikost písma
-- úprava nadpisů, podnadpisů a veškerého textu ve stránce
-- [X] nastavení chování odkazů (navštívený, aktivní, ...)
-- příkladem je navigační panel na stránce "galerie", odkazy se mění barevně podle navštívenosti
-- [X] nadpisy
-- lze najít kdekoliv kde je (article, section, header, ... )
-- [X] responzivní chování stránky ve dvou úrovních
-- stránka je vytvořena tak aby byla funkční na všech zařízeních (někde víc, někde míň), ale neměla by se nikdy rozbít (kolize textu, obrazku, overflow, ...)
-- [X] flexibilní rozložení obsahu v závislosti na rozlišení
-- většina obsahu je navžena tak aby při určité šířce se nastavil display: block, pouze vzácně se využívá statických pozic, většina jsou %
-- [X] responzivní menu
-- pro desktop je menu v header, pro uživatele jednodušší
+- [X] Barva písma a pozadí.
+- každá stránka má rozdílné pozadí pro **desktop** a pro **mobily** *(každé specificky upravené pro dané rozlišení)*
+- barva písma *(skoro každý prvek, kde je text)*
+- [X] Font a velikost písma.
+- úprava **nadpisů**, **podnadpisů** a veškerého **textu** ve stránce
+- [X] Nastavení chování odkazů *(navštívený, aktivní, ...)*
+- příkladem je **navigační panel** na stránce [Galerie](https://github.com/davidvancl/Homeland/blob/master/twa/Pages/gallery.html), odkazy se mění barevně podle navštívenosti
+- [X] Nadpisy.
+- lze najít kdekoliv kde je *(article, section, header, ... )*
+- [X] Responzivní chování stránky ve dvou úrovních.
+- stránka je vytvořena tak, aby byla funkční na **všech zařízeních** *(někde víc, někde míň)*, ale neměla by se nikdy rozbít *(kolize textu, obrazku, overflow, ...)*
+- [X] Flexibilní rozložení obsahu v závislosti na rozlišení.
+- většina obsahu je navžena tak, aby při určité šířce se nastavil **display: block**, pouze vzácně se využívá statických pozic, většina jsou **%**
+- [X] Responzivní menu.
+- pro **desktop** je menu v **header**, pro uživatele jednodušší
 - na mobilu je pod header aby nemuselo být zbytečně malé a nenarušovalo header panel, tak je pod header připojen s možností rozkliku
 
 ---
