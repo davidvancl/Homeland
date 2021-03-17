@@ -23,22 +23,47 @@
 
 #### Požadavky na CSS:
 - [X] barva písma a pozadí
+- každá stránka má rozdílné pozadí pro desktop a pro mobily (každé specificky upravené pro dané rozlišení)
+- barva písma (skoro každý prvek, kde je text)
 - [X] font a velikost písma
+- úprava nadpisů, podnadpisů a veškerého textu ve stránce
 - [X] nastavení chování odkazů (navštívený, aktivní, ...)
+- příkladem je navigační panel na stránce "galerie", odkazy se mění barevně podle navštívenosti
 - [X] nadpisy
-- [X] responzivní chování stránky ve dvou úrovních 
+- lze najít kdekoliv kde je (article, section, header, ... )
+- [X] responzivní chování stránky ve dvou úrovních
+- stránka je vytvořena tak aby byla funkční na všech zařízeních (někde víc, někde míň), ale neměla by se nikdy rozbít (kolize textu, obrazku, overflow, ...)
 - [X] flexibilní rozložení obsahu v závislosti na rozlišení
+- většina obsahu je navžena tak aby při určité šířce se nastavil display: block, pouze vzácně se využívá statických pozic, většina jsou %
 - [X] responzivní menu
+- pro desktop je menu v header, pro uživatele jednodušší
+- na mobilu je pod header aby nemuselo být zbytečně malé a nenarušovalo header panel, tak je pod header připojen s možností rozkliku
 
 #### rozšiřující úkoly:
 - [X] HTML5 média (audio, video, figure)
+- všechny alementy se nachází na stránce "galerie", další figure je promítání na "úvodní" stránce
 - [X] HTML5 formuláře (nové atributy a typy)
+- kompletní formulář s elementy na stránce "kontakty"
+- klientská vlidace je separovaná v .js souboru, validace serverová je v souboru .php
+- po zvalidování na serveru je kontaktní form uložen do DB 
 - [X] Alternativní barevné schéma a rozložení CSS
+- jakákoliv stránka
 - [X] CSS pro tiskový výstup (skrytí navigace)
+- stránka "galerie" navigační panel je skryt, na :hover je rozbalen
 - [X] Pokročilé funkce CSS (generování obsahu)
+- na stránce "historie" při zmenšení tabulky pro mobily se vygenerují popisky pro jednotlivé řádky
 - [X] Rozšířené vlastnosti z CSS3 (animace, přechodové efekty, transformace, nové vlastnosti, vlastní fonty)
+- animace je třeba v "úvodu" promítání obrázků
+- přechodové efekty využity př. nav panel na každé stránce
+- celý web je ve fontu použitý v GTA
 - [X] Pokročilá responzivita CSS (širší škála podporovaných rozlišení, responzivní média)
+- podpora pro 'snad všechna rozlišení'
 - [X] Využití vloženého SVG v HTML nebo CSS
+- SVG je ikonka(logo) v "úvodu" v oblasti promítání
 - [X] Konfigurace serveru pomocí .htaccess (chybové stránky, přesměrování, heslo, omezení na základě IP adres)
+- celá konfigurace viz .htaccess
 - [X] Klientský JavaScript (přepínání CSS, geolokace, rozšířená validace formuláře)
+- každá stránka má svůj .js soubor kde je něco málo ke stránce
+- na desktop může být JS blokovaný a vše bude fungovat
 - [X] Serverový skript v PHP (zpracování formuláře)
+- zpracování kontaktního formuláže
