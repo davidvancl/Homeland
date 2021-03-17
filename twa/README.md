@@ -44,7 +44,7 @@
 
 ---
 
-#### rozšiřující úkoly:
+#### Rozšiřující úkoly:
 - [X] HTML5 média (audio, video, figure).
 - všechny alementy se nachází na stránce [Galerie](https://github.com/davidvancl/Homeland/blob/master/twa/Pages/gallery.html), další figure je promítání na [Úvodní](https://github.com/davidvancl/Homeland/blob/master/twa/index.html) stránce
 - [X] HTML5 formuláře (nové atributy a typy).
