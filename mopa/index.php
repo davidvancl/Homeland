@@ -10,10 +10,6 @@
 //            'email' => 'user@example.com',
 //            'name' => 'user User',
 //        ]);
-//        $db = $client->selectDatabase('mopa');
-//        foreach ($client->listDatabases() as $databaseInfo) {
-//            var_dump($databaseInfo);
-//        }
         echo "OK";
     } catch (Exception $e) {
         echo $e->getCode().  "<br>";
