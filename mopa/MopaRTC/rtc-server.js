@@ -1,43 +1,45 @@
 #!/usr/bin/env node
-host_s = "192.168.2.20";
-port_s = 9999;
+
+let net_host = "192.168.2.20";
+let net_port = 9999;
+let ws_port = 9998;
+let ws_host = net_host;
+let clientList = [];
+let printMode = false;
 
 const GUI = new (require("./Utils/ConsoleWriter.js"))();
-const webSocketServer = new (require('ws')).Server({port: 9998});
-const netServer = require('net').createServer();
+const webSocketServer = new (require('ws')).Server({port: ws_port});
+const netServer = (require('net')).createServer();
 
-let clientList = [];
+function sendToAll (message) {
+    for (let i = 0; i < clientList.length; i++) {
+        if (clientList[i].readyState === 3){
+            clientList.splice(i,1);
+        } else {
+            clientList[i].send(message);
+        }
+    }
+}
 
 class RTCServer {
-
     constructor() {
-        GUI.printMessage("Starting server ws://localhost:9998");
+        if (printMode) GUI.printMessage("Starting WebSocketServer => ws://" + ws_host + ":" + ws_port);
+        if (printMode) GUI.printMessage("Starting NetServer => inet://" + net_host + ":" + net_host);
         this.registerServerListeners();
-        netServer.listen(port_s, host_s);
+        netServer.listen(net_port, net_host);
     }
 
     registerServerListeners() {
         webSocketServer.on('connection', function connection(client){
-            GUI.printMessage("Client connected.");
+            if (printMode) GUI.printMessage("Client connected and add to list.");
             clientList.push(client);
         });
 
-        netServer.on('listening', function () {
-
-        });
-
-        netServer.on('connection', function (socket){
-            socket.on('data', function (buf) {
-                sendAll(buf.toString('utf8'));
+        netServer.on('connection', function (netClient){
+            netClient.on('data', function (buffer) {
+                sendToAll(buffer.toString('utf8'));
             })
         });
     }
 }
-
-function sendAll (message) {
-    for (let i = 0; i < clientList.length; i++) {
-        clientList[i].send("Message: " + message);
-    }
-}
-
 new RTCServer();

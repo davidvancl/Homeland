@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    padding: 48px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .nav-link {
+    color: #333;
+}
+
+.sidebar .nav-link.active {
+    color: rgb(232,182,138);
+    font-weight: bold;
+}
+
+.navbar-brand {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: rgb(49,18,13);
+    box-shadow: inset -1px 0 0 rgb(49,18,13);
+}
+
+.themed-grid-col {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    border: 1px solid rgba(49,18,13, 0.2);
+    color:  rgb(49,18,13);
+}
+
+.light_bg{
+    background-color: rgba(232,182,138,0.15);
+}
+
+.dark_bg{
+    background-color: rgba(232,182,138,0.4);
+}
+
+#header{
+    background-color: rgb(232,182,138);
+}
+
+#mainTitle{
+    color: rgb(232,182,138);
+    font-weight: bold;
+}
+
+#connection_status{
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+.feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}
+.feather {
+    margin-right: 4px;
+    color: #727272;
+}
+
+.feather {
+    color: inherit;
+}
