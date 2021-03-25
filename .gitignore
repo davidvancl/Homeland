@@ -10,6 +10,7 @@
 */node_modules/
 */MopaRTC/node_modules/
 */MopaRTC/package.json
+test/
 
 pull.sh
 push.sh
