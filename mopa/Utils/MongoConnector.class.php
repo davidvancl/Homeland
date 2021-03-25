@@ -9,18 +9,16 @@ class MongoConnector implements IDBConnector {
     private $collection;
 
     public function __construct(){
-        $configWorker = new ConfigWorker();
-        $db_user = $configWorker->getValue("DB_MONGO_USER");
-        $db_passwd = $configWorker->getValue("DB_MONGO_PASSWORD");
-        $db_host = $configWorker->getValue("DB_MONGO_HOST");
-        $db_port = $configWorker->getValue("DB_MONGO_PORT");
         try {
+            $db_user = ConfigWorker::getValue("DB_MONGO_USER");
+            $db_passwd = ConfigWorker::getValue("DB_MONGO_PASSWORD");
+            $db_host = ConfigWorker::getValue("DB_MONGO_HOST");
+            $db_port = ConfigWorker::getValue("DB_MONGO_PORT");
             $this->client = new MongoDB\Client("mongodb://{$db_user}:{$db_passwd}@{$db_host}:{$db_port}");
-            $this->database = $this->client->selectDatabase($configWorker->getValue("DB_MONGO_WORKSPACE"));
-            $this->collection = $this->database->selectCollection($configWorker->getValue("DB_MONGO_COLLECTION"));
-        } catch (Exception $e) {
-            echo $e->getCode(); //TODO: JSON FORMAT
-            die();
+            $this->database = $this->client->selectDatabase(ConfigWorker::getValue("DB_MONGO_WORKSPACE"));
+            $this->collection = $this->database->selectCollection(ConfigWorker::getValue("DB_MONGO_COLLECTION"));
+        } catch (Exception $error) {
+            die(ConfigWorker::jsonError($error->getCode(),$error->getMessage()));
         }
     }
 

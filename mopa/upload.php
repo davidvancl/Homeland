@@ -2,6 +2,7 @@
 require_once "Utils/MongoConnector.class.php";
 require_once "Utils/MySQLConnector.class.php";
 require_once "Utils/Firewall.class.php";
+require_once "Utils/ClientRTC.class.php";
 
 class Upload extends Firewall {
     private $MONGO_DB = "Mongo";
@@ -31,19 +32,8 @@ class Upload extends Firewall {
         ];
 
         if ($this->client->insert($loaded_params) === "insert:OK"){
-
-            $host = "192.168.2.20"; //TODO: CLASS
-            $port = 9999;
-
-            $socket = socket_create(AF_INET,SOCK_STREAM, SOL_TCP);
-            $result = socket_connect($socket, $host, $port);
-
-            if(!$result){
-                die("cannot connect" . socket_strerror(socket_last_error()).PHP_EOL);
-            }
-            socket_write($socket, "HELLO WORLD INSERT SCRIPT");
+            if($this->isAllowed("RTC_UPLOAD")) ClientRTC::sendData($loaded_params);
         }
-        echo "OK";
     }
 
     private function validateDB(){

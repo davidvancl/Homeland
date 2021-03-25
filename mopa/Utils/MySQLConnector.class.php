@@ -7,20 +7,20 @@ class MySQLConnector implements IDBConnector {
     private $statement;
 
     public function __construct(){
-        $configWorker = new ConfigWorker();
-        $db_host = $configWorker->getValue("DB_MYSQL_HOST");
-        $db_user = $configWorker->getValue("DB_MYSQL_USER");
-        $db_password = $configWorker->getValue("DB_MYSQL_PASSWORD");
-        $db_workspace = $configWorker->getValue("DB_MYSQL_WORKSPACE");
         try {
+            $db_host = ConfigWorker::getValue("DB_MYSQL_HOST");
+            $db_user = ConfigWorker::getValue("DB_MYSQL_USER");
+            $db_password = ConfigWorker::getValue("DB_MYSQL_PASSWORD");
+            $db_workspace = ConfigWorker::getValue("DB_MYSQL_WORKSPACE");
+
             $this->connection = new PDO("mysql:host=$db_host;dbname=$db_workspace", $db_user, $db_password);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->connection->exec("set names utf8");
             $this->statement = $this->connection->prepare("INSERT INTO `monitoring` VALUES (0, :device_id,
                                  :temperature_inside, :temperature_outside, :humidity_inside, :humidity_outside,
                                  :date_time)");
-        } catch (PDOException $ex){
-            die("Connection error"); //TODO: JSON FORMAT
+        } catch (PDOException $exception){
+            die(ConfigWorker::jsonError($exception->getCode(),$exception->getMessage()));
         }
     }
 
@@ -33,11 +33,11 @@ class MySQLConnector implements IDBConnector {
             $this->statement->bindParam(':humidity_outside', $key_value["humidity_outside"]);
             $this->statement->bindParam(':date_time', $key_value["date_time"]);
             if (!$this->statement->execute()) {
-                die("Execute error"); //TODO: JSON FORMAT
+                die(ConfigWorker::jsonError("700","MySQL execute error."));
             }
             return "insert:OK";
         } catch (PDOException $ex){
-            die("Execute exception"); //TODO: JSON FORMAT
+            die(ConfigWorker::jsonError($ex->getCode(),$ex->getMessage()));
         }
     }
 }
