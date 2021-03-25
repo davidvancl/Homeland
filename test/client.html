@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html  lang="cs">
+    <head>
+        <title>Pokus</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script type = "text/javascript">
+            const socket = new WebSocket("ws://192.168.2.20:9998");
+
+            socket.addEventListener('open', function (event) {
+                socket.send('Hello world');
+            });
+
+            socket.addEventListener('message', function (message) {
+                console.log(message);
+            });
+        </script>
+    </body>
+</html>

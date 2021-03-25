@@ -26,5 +26,6 @@ class MongoConnector implements IDBConnector {
 
     public function insert($key_value) {
         $this->collection->insertOne($key_value);
+        return "insert:OK";
     }
 }

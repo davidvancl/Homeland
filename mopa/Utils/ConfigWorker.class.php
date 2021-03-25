@@ -1,6 +1,6 @@
 <?php
 
-class ConfigWorker {
+class ConfigWorker { //TODO: rework -> no file use
     private static $config_path = __DIR__ . "/../config.cfg";
     private $config = array();
 

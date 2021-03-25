@@ -35,6 +35,7 @@ class MySQLConnector implements IDBConnector {
             if (!$this->statement->execute()) {
                 die("Execute error"); //TODO: JSON FORMAT
             }
+            return "insert:OK";
         } catch (PDOException $ex){
             die("Execute exception"); //TODO: JSON FORMAT
         }
