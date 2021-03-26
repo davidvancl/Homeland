@@ -72,10 +72,18 @@
                         <div class="col-6 themed-grid-col dark_bg">Vnější vlhkost</div>
                         <div id="outside_humidity" class="col-6 themed-grid-col dark_bg"></div>
                     </div>
+
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <canvas id="temperatureChart" width="100" height="100"></canvas>
+                        </div>
+                    </div>
                 </main>
             </div>
         </div>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
         <script type="text/javascript" src="Utils/WebClient.js"></script>
     </body>
 </html>
