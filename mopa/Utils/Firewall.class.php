@@ -6,7 +6,7 @@ class Firewall {
     private $MYSQL_DB = "MySQL";
 
     private $authorized_rsa_keys = [
-        "DESKTOP-5PV5MB5" => "AAAAB3NzaC1yc2EAAAADAQABAAAAgQCpu3i+T8LGzHY89n9zbT8wtIO+KzDiHVu9K0XkbLJxisw85XdJPSw4QGwujxtY5qPjtntlgy2Z4hEfPD0aczlEHfv8ejTBdox9I8+515R6Q+/0CXsQjs2hWV8cUxd8/Z8PnKdYbWOHCT78ggYrIRuGzZGrAa8kGPxoQSIHMROTnQ==",
+        "DESKTOP-5PV5MB5" => "",
     ];
 
     private $firewall_permissions = [
