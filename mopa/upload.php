@@ -5,13 +5,10 @@ require_once "Utils/Firewall.class.php";
 require_once "Utils/ClientRTC.class.php";
 
 class Upload extends Firewall {
-    private $MONGO_DB = "Mongo";
-    private $MYSQL_DB = "MySQL";
     private $client;
 
     function __construct() {
         parent::__construct();
-        $this->validateDB();
         $this->assignClient();
         $this->process();
     }
@@ -28,16 +25,14 @@ class Upload extends Firewall {
             'temperature_outside' => $_POST["temperature_outside"],
             'humidity_inside' => $_POST["humidity_inside"],
             'humidity_outside' => $_POST["humidity_outside"],
+            'co2_inside' => $_POST["co2_inside"],
+            'co2_outside' => $_POST["co2_outside"],
             'date_time' => $_POST["date_time"]
         ];
 
         if ($this->client->insert($loaded_params) === "insert:OK"){
             if($this->isAllowed("RTC_UPLOAD")) ClientRTC::sendData($loaded_params);
         }
-    }
-
-    private function validateDB(){
-        if ($_POST["db_type"] !== $this->MONGO_DB && $_POST["db_type"] !== $this->MYSQL_DB) die("DB Validator ERROR");
     }
 }
 new Upload();
