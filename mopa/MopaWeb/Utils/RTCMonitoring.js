@@ -80,6 +80,11 @@ function openConnection(){
         temperatureGraph = createGraph('temperatureChart', 'teplota');
         humidityGraph = createGraph('humidityChart', 'vlhkost');
         co2Graph = createGraph('co2Chart', 'oxid uhličitý');
+
+        let dw_buttons = document.getElementsByClassName("download_button");
+        for (let i = 0; i < dw_buttons.length; i++) {
+            dw_buttons[i].disabled = false;
+        }
     });
 
     socket.addEventListener('close', (event) => {
@@ -93,8 +98,8 @@ function openConnection(){
             let data_object = JSON.parse(message.data);
             document.getElementById("inside_temperature").innerHTML = data_object["temperature_inside"] + "°C / " + getFahrenheit(data_object["temperature_inside"]) + "°F";
             document.getElementById("outside_temperature").innerHTML = data_object["temperature_outside"] + "°C / " + getFahrenheit(data_object["temperature_outside"]) + "°F";
-            document.getElementById("inside_humidity").innerHTML = data_object["humidity_inside"] + "°C / " + getFahrenheit(data_object["humidity_inside"]) + "°F";
-            document.getElementById("outside_humidity").innerHTML = data_object["humidity_outside"] + "°C / " + getFahrenheit(data_object["humidity_outside"]) + "°F";
+            document.getElementById("inside_humidity").innerHTML = data_object["humidity_inside"];
+            document.getElementById("outside_humidity").innerHTML = data_object["humidity_outside"];
             document.getElementById("inside_co2").innerHTML = data_object["co2_inside"];
             document.getElementById("outside_co2").innerHTML = data_object["co2_outside"];
             document.getElementById("last_monitoring").innerHTML = "Poslední změna: <b>" + data_object["date_time"] + "</b>";
@@ -110,4 +115,11 @@ function openConnection(){
     document.getElementById("close_connection").disabled = false;
     document.getElementById("pause_connection").disabled = false;
     is_connection_paused = false;
+}
+
+function downloadImage(graph) {
+    let a = document.createElement('a');
+    a.href = graph.toBase64Image();
+    a.download = 'my_file_name.png';
+    a.click();
 }

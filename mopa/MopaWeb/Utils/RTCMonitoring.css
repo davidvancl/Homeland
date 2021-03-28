@@ -77,15 +77,24 @@ footer{
     margin-bottom: 10px;
 }
 
-footer{
+footer {
     background-color: rgb(232,182,138);
 }
 
-.upper_footer{
+.card-header{
+    background-color: rgba(232,182,138, 0.6);
+}
+
+.upper_footer, .chartTitle{
     color: rgb(49,18,13);
 }
 
 #author_footer{
     background-color: rgb(49,18,13);
     color: rgb(232,182,138);
+}
+
+.download_button{
+    position: absolute;
+    right: 0;
 }
