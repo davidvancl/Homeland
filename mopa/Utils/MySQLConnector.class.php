@@ -37,4 +37,9 @@ class MySQLConnector implements IDBConnector {
             die(ConfigWorker::jsonError($ex->getCode(),$ex->getMessage()));
         }
     }
+
+    public function get_interval($time_from, $time_to)
+    {
+        // TODO: Implement get_interval() method.
+    }
 }

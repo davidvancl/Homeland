@@ -26,4 +26,26 @@ class MongoConnector implements IDBConnector {
         $this->collection->insertOne($key_value);
         return "insert:OK";
     }
+
+    public function get_interval($time_from, $time_to) {
+        $cursor = $this->collection->find([
+            "date_time" => [
+                '$gte' => $time_from,
+                '$lt' => $time_to
+            ]
+        ]);
+        $jsonObject = [ 'data' => [] ];
+        foreach ($cursor as $object) {
+            $jsonObject['data'][] = [
+                'date' => $object['date_time'],
+                'temperatureInside' => $object['temperature_inside'],
+                'temperatureOutside' => $object['temperature_outside'],
+                'humidityInside' => $object['humidity_inside'],
+                'humidityOutside' => $object['humidity_outside'],
+                'co2Inside' => $object['co2_inside'],
+                'co2Outside' => $object['co2_outside']
+            ];
+        }
+        echo json_encode($jsonObject);
+    }
 }

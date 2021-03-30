@@ -14,7 +14,7 @@ function createStatChart(canvas, title_min, xTitle, yTitle) {
                 lineTension: 0,
                 borderWidth: 2
             }, {
-                label: 'Vnitřní ' + title_min,
+                label: 'Vnější ' + title_min,
                 backgroundColor: 'rgba(54, 162, 235, 1)',
                 borderColor: 'rgba(54, 162, 235, 1)',
                 data: [],
@@ -32,6 +32,15 @@ function createStatChart(canvas, title_min, xTitle, yTitle) {
             scales: {
                 xAxes: [{
                     type: 'time',
+                    time: {
+                        parser: 'h:mm:ss a',
+                        tooltipFormat: 'll HH:mm',
+                        unit: 'day',
+                        unitStepSize: 1,
+                        displayFormats: {
+                            'day': 'DD-MM-YYYY HH:mm'
+                        }
+                    },
                     distribution: 'series',
                     offset: true,
                     ticks: {
@@ -104,4 +113,41 @@ function getDate(date) {
 
 function getTime(date) {
     return String(date.getHours()).padStart(2, '0') + ":" + String(date.getMinutes()).padStart(2, '0');
+}
+
+function requestData(chart, type){
+    let data = 'from=' + (
+        document.getElementById(type + "_date_from").value + " " + document.getElementById(type + "_time_from").value + ":00"
+    ) + "&to=" + (
+        document.getElementById(type + "_date_to").value + " " + document.getElementById(type + "_time_to").value + ":00"
+    );
+    let client = new XMLHttpRequest();
+    client.open('POST', 'http://192.168.2.20/dave/mopa/download.php', true);
+    client.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    client.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            chart.data.datasets[0].data = [];
+            chart.data.datasets[1].data = [];
+            chart.update();
+            let responseData = JSON.parse(client.responseText);
+            responseData['data'].forEach(function (record) {
+                addData(chart, record['date'], record[type + 'Inside'],0)
+                addData(chart, record['date'], record[type + 'Outside'],1)
+            });
+        } else {
+            //TODO: alert server error
+        }
+    };
+    client.onerror = function() {
+        //TODO: alery error
+    };
+    client.send(data);
+}
+
+function addData(chart, time, value, dataSetIndex) {
+    chart.data.datasets[dataSetIndex].data.push({
+        t: moment(time, 'YYYY-MM-DD HH:mm:ss'),
+        y: value
+    });
+    chart.update();
 }

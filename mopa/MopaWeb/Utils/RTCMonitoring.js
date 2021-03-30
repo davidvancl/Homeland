@@ -20,7 +20,13 @@ function createGraph(containerID, titlePart) {
                 xAxes: [{
                     type: 'time',
                     time: {
-                        parser: 'h:mm:ss a'
+                        parser: 'h:mm:ss a',
+                        tooltipFormat: 'll HH:mm',
+                        unit: 'day',
+                        unitStepSize: 1,
+                        displayFormats: {
+                            'day': 'DD-MM-YYYY HH:mm'
+                        }
                     }
                 }]
             }
