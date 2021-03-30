@@ -1,10 +1,10 @@
 let socket, temperatureGraph, humidityGraph, co2Graph, is_connection_paused;
 
 function getFahrenheit(celsius) {
-    return Math.round((celsius * (9/5) + 32) * 100) / 100;
+    return Math.round((celsius * (9 / 5) + 32) * 100) / 100;
 }
 
-function addData(chart, time, value ,dataSetIndex) {
+function addData(chart, time, value, dataSetIndex) {
     chart.data.datasets[dataSetIndex].data.push({
         t: moment(time, 'YYYY-MM-DD HH:mm:ss'),
         y: value
@@ -33,7 +33,7 @@ function createGraph(containerID, titlePart) {
                 borderColor: 'rgba(255, 99, 132, 1)',
                 fill: false,
                 borderWidth: 2
-            },{
+            }, {
                 label: 'Vnější ' + titlePart,
                 data: [],
                 backgroundColor: 'rgba(54, 162, 235, 1)',
@@ -45,7 +45,7 @@ function createGraph(containerID, titlePart) {
     });
 }
 
-function closeConnection(){
+function closeConnection() {
     socket.close();
     socket = null;
     document.getElementById("open_connection").disabled = false;
@@ -58,7 +58,7 @@ function changePause() {
     is_connection_paused = !is_connection_paused;
     let element = document.getElementById("connection_status");
     let elementButton = document.getElementById("pause_connection");
-    if (is_connection_paused){
+    if (is_connection_paused) {
         element.style.color = "yellow";
         element.innerHTML = "Pozastaveno";
         elementButton.innerHTML = "Pokračovat";
@@ -69,7 +69,7 @@ function changePause() {
     }
 }
 
-function openConnection(){
+function openConnection() {
     socket = new WebSocket("ws://192.168.2.20:9998");
 
     socket.addEventListener('open', function (event) {
@@ -94,7 +94,7 @@ function openConnection(){
     });
 
     socket.addEventListener('message', function (message) {
-        if(!is_connection_paused) {
+        if (!is_connection_paused) {
             let data_object = JSON.parse(message.data);
             document.getElementById("inside_temperature").innerHTML = data_object["temperature_inside"] + "°C / " + getFahrenheit(data_object["temperature_inside"]) + "°F";
             document.getElementById("outside_temperature").innerHTML = data_object["temperature_outside"] + "°C / " + getFahrenheit(data_object["temperature_outside"]) + "°F";
