@@ -9,17 +9,12 @@ class Firewall {
         "DESKTOP-5PV5MB5" => "AAAAB3NzaC1yc2EAAAADAQABAAAAgQCpu3i+T8LGzHY89n9zbT8wtIO+KzDiHVu9K0XkbLJxisw85XdJPSw4QGwujxtY5qPjtntlgy2Z4hEfPD0aczlEHfv8ejTBdox9I8+515R6Q+/0CXsQjs2hWV8cUxd8/Z8PnKdYbWOHCT78ggYrIRuGzZGrAa8kGPxoQSIHMROTnQ==",
     ];
 
-    //TODO: not empty request
-    private $firewall_permissions = [
-        "CHECK_POST" => true,
-        "RTC_UPLOAD" => true,
-        "VALIDATE_DB" => true,
-        "SSH_VERIFY" => true,
-        "FORCE_STOP" => false
-    ];
+    private $firewall_permissions = [];
 
-    public function __construct(){
-        if ($this->firewall_permissions["CHECK_POST"]) $this->check_params();
+    public function __construct($required_params, $isUpload){
+        $this->assign_permissions($isUpload);
+        if ($this->firewall_permissions["CHECK_PARAMS"]) $this->check_params($required_params);
+        if ($this->firewall_permissions["CHECK_PARAMS_NOT_EMPTY"]) $this->check_params_not_empty($required_params);
         if ($this->firewall_permissions["VALIDATE_DB"]) $this->validateDB();
         if ($this->firewall_permissions["SSH_VERIFY"]) $this->verify_ssh_key();
         if ($this->firewall_permissions["FORCE_STOP"]) die(ConfigWorker::jsonError("606","Force stop by firewall."));
@@ -29,12 +24,21 @@ class Firewall {
         return $this->firewall_permissions[$key];
     }
 
-    private function check_params(){
-        if (!isset($_POST) || !isset($_POST["device_id"]) || !isset($_POST["temperature_inside"]) ||
-            !isset($_POST["temperature_outside"]) || !isset($_POST["humidity_inside"]) ||
-            !isset($_POST["humidity_outside"]) || !isset($_POST["date_time"]) || !isset($_POST["db_type"]) ||
-            !isset($_POST["co2_inside"]) || !isset($_POST["co2_outside"])){
-            die(ConfigWorker::jsonError("608", "Post request corrupted."));
+    private function assign_permissions($isUpload){
+        $this->firewall_permissions = [
+            "CHECK_PARAMS" => true,
+            "CHECK_PARAMS_NOT_EMPTY" => true,
+            "RTC_UPLOAD" => $isUpload,
+            "VALIDATE_DB" => true,
+            "SSH_VERIFY" => $isUpload,
+            "FORCE_STOP" => false
+        ];
+    }
+
+    private function check_params($required_params){
+        if (!isset($_POST)) die(ConfigWorker::jsonError("608", "Post request corrupted."));
+        foreach ($required_params as $parameter){
+            if (!isset($_POST[$parameter])) die(ConfigWorker::jsonError("608", "Post request corrupted."));
         }
     }
 
@@ -49,5 +53,11 @@ class Firewall {
         if (!array_key_exists($_POST["device_id"], $this->authorized_rsa_keys) ||
             $this->authorized_rsa_keys[$_POST["device_id"]] != $_POST["rsa_key"])
             die(ConfigWorker::jsonError("705", "Verification failed. No permissions."));
+    }
+
+    private function check_params_not_empty($required_params){
+        foreach ($required_params as $parameter){
+            if (empty($_POST[$parameter])) die(ConfigWorker::jsonError("609", "One or more params are empty. Blocking by firewall."));
+        }
     }
 }

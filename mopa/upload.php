@@ -8,7 +8,17 @@ class Upload extends Firewall {
     private $client;
 
     function __construct() {
-        parent::__construct();
+        parent::__construct([
+            "device_id",
+            "temperature_inside",
+            "temperature_outside",
+            "humidity_inside",
+            "humidity_outside",
+            "date_time",
+            "db_type",
+            "co2_inside",
+            "co2_outside"
+        ], true);
         $this->assignClient();
         $this->process();
     }
