@@ -37,11 +37,12 @@ class Upload extends Firewall {
             'humidity_outside' => $_POST["humidity_outside"],
             'co2_inside' => $_POST["co2_inside"],
             'co2_outside' => $_POST["co2_outside"],
-            'date_time' => $_POST["date_time"]
+            'date_time' => date("Y-m-d H:i:s") //$_POST["date_time"] TODO: CHANGE FROM ARDUINO RTC
         ];
 
         if ($this->client->insert($loaded_params) === "insert:OK"){
             if($this->isAllowed("RTC_UPLOAD")) ClientRTC::sendData($loaded_params);
+            echo "{OK}";
         }
     }
 }
