@@ -27,6 +27,10 @@ function createGraph(containerID, titlePart) {
                         displayFormats: {
                             'day': 'DD-MM-YYYY HH:mm'
                         }
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: "Čas"
                     }
                 }]
             }

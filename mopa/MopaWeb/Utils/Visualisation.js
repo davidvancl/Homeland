@@ -78,6 +78,8 @@ function preloadPage() {
     humidityChart = createStatChart("humidityChart", "vlhkost", "Časová osa", "miligramů na litr (mg/L asi)");
     co2Chart = createStatChart("co2Chart", "CO2", "Časová osa", "parts per million (ppm)");
 
+
+
     let date = new Date();
     fillValues(document.getElementsByClassName("dateInputTo"), getDate(date));
     fillValues(document.getElementsByClassName("timeInputTo"), getTime(date));
@@ -120,7 +122,7 @@ function requestData(chart, type){
         document.getElementById(type + "_date_from").value + " " + document.getElementById(type + "_time_from").value + ":00"
     ) + "&to=" + (
         document.getElementById(type + "_date_to").value + " " + document.getElementById(type + "_time_to").value + ":00"
-    );
+    ) + "&db=Mongo";
     let client = new XMLHttpRequest();
     client.open('POST', 'http://192.168.2.20/dave/mopa/download.php', true);
     client.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
@@ -135,11 +137,11 @@ function requestData(chart, type){
                 addData(chart, record['date'], record[type + 'Outside'],1)
             });
         } else {
-            //TODO: alert server error
+            popupError("Odpověď ze sevrevu není správná. Kontaktujte admina.");
         }
     };
     client.onerror = function() {
-        //TODO: alery error
+        popupError("Error na straně klienta. Kontaktujte administrátora.");
     };
     client.send(data);
 }
@@ -150,4 +152,13 @@ function addData(chart, time, value, dataSetIndex) {
         y: value
     });
     chart.update();
+}
+
+function popupError(message) {
+    let box = document.getElementById("alert_box");
+    box.innerHTML = message;
+    box.hidden = false;
+    setTimeout(function () {
+        box.hidden = true;
+    }, 5000);
 }
