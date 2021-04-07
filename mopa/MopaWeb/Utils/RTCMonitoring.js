@@ -32,6 +32,11 @@ function createGraph(containerID, titlePart) {
                         display: true,
                         labelString: "Čas"
                     }
+                }],
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
                 }]
             }
         },
@@ -108,10 +113,10 @@ function openConnection() {
             let data_object = JSON.parse(message.data);
             document.getElementById("inside_temperature").innerHTML = data_object["temperature_inside"] + "°C / " + getFahrenheit(data_object["temperature_inside"]) + "°F";
             document.getElementById("outside_temperature").innerHTML = data_object["temperature_outside"] + "°C / " + getFahrenheit(data_object["temperature_outside"]) + "°F";
-            document.getElementById("inside_humidity").innerHTML = data_object["humidity_inside"];
-            document.getElementById("outside_humidity").innerHTML = data_object["humidity_outside"];
-            document.getElementById("inside_co2").innerHTML = data_object["co2_inside"];
-            document.getElementById("outside_co2").innerHTML = data_object["co2_outside"];
+            document.getElementById("inside_humidity").innerHTML = data_object["humidity_inside"] + "% RH";
+            document.getElementById("outside_humidity").innerHTML = data_object["humidity_outside"] + "% RH";
+            document.getElementById("inside_co2").innerHTML = data_object["co2_inside"] + "ppm";
+            document.getElementById("outside_co2").innerHTML = data_object["co2_outside"] + "ppm";
             document.getElementById("last_monitoring").innerHTML = "Poslední změna: <b>" + data_object["date_time"] + "</b>";
             addData(temperatureGraph, data_object["date_time"], data_object["temperature_inside"], 0);
             addData(temperatureGraph, data_object["date_time"], data_object["temperature_outside"], 1);

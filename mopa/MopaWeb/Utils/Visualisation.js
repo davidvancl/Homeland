@@ -66,6 +66,9 @@ function createStatChart(canvas, title_min, xTitle, yTitle) {
                     scaleLabel: {
                         display: true,
                         labelString: yTitle
+                    },
+                    ticks: {
+                        beginAtZero: true
                     }
                 }]
             }

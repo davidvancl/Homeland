@@ -37,7 +37,7 @@ class Upload extends Firewall {
             'humidity_outside' => $_POST["humidity_outside"],
             'co2_inside' => $_POST["co2_inside"],
             'co2_outside' => $_POST["co2_outside"],
-            'date_time' => date("Y-m-d H:i:s") //$_POST["date_time"] TODO: CHANGE FROM ARDUINO RTC
+            'date_time' => $_POST["date_time"]
         ];
 
         if ($this->client->insert($loaded_params) === "insert:OK"){
