@@ -96,6 +96,7 @@
                                     <div class="card-body">
                                         <canvas id="temperatureChart"></canvas>
                                     </div>
+                                    <button type="button" class="btn btn-primary btn-sm download_button" onclick="downloadImage(temperatureChart)">Stáhnout</button>
                                 </div>
                             </div>
                         </div>
@@ -134,6 +135,7 @@
                                     <div class="card-body">
                                         <canvas id="humidityChart"></canvas>
                                     </div>
+                                    <button type="button" class="btn btn-primary btn-sm download_button" onclick="downloadImage(humidityChart)">Stáhnout</button>
                                 </div>
                             </div>
                         </div>
@@ -172,6 +174,7 @@
                                     <div class="card-body">
                                         <canvas id="co2Chart"></canvas>
                                     </div>
+                                    <button type="button" class="btn btn-primary btn-sm download_button" onclick="downloadImage(co2Chart)">Stáhnout</button>
                                 </div>
                             </div>
                         </div>
@@ -197,6 +200,7 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+        <script src="Utils/MultiUtils.js"></script>
         <script src="Utils/Visualisation.js"></script>
     </body>
 </html>

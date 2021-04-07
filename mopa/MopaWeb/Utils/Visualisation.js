@@ -78,7 +78,7 @@ function createStatChart(canvas, title_min, xTitle, yTitle) {
 
 function preloadPage() {
     temperatureChart = createStatChart("temperatureChart", "teplota", "Časová osa", "Stupně Celsia (°C)");
-    humidityChart = createStatChart("humidityChart", "vlhkost", "Časová osa", "miligramů na litr (mg/L asi)");
+    humidityChart = createStatChart("humidityChart", "vlhkost", "Časová osa", "relative humidity RH (%)");
     co2Chart = createStatChart("co2Chart", "CO2", "Časová osa", "parts per million (ppm)");
 
     let date = new Date();
@@ -148,14 +148,6 @@ function requestData(chart, type){
         popupError("Error na straně klienta. Kontaktujte administrátora.");
     };
     client.send(data);
-}
-
-function addData(chart, time, value, dataSetIndex) {
-    chart.data.datasets[dataSetIndex].data.push({
-        t: moment(time, 'YYYY-MM-DD HH:mm:ss'),
-        y: value
-    });
-    chart.update();
 }
 
 function popupError(message) {

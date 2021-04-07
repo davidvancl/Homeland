@@ -4,14 +4,6 @@ function getFahrenheit(celsius) {
     return Math.round((celsius * (9 / 5) + 32) * 100) / 100;
 }
 
-function addData(chart, time, value, dataSetIndex) {
-    chart.data.datasets[dataSetIndex].data.push({
-        t: moment(time, 'YYYY-MM-DD HH:mm:ss'),
-        y: value
-    });
-    chart.update();
-}
-
 function createGraph(containerID, titlePart) {
     return new Chart(document.getElementById(containerID).getContext('2d'), {
         type: 'line',
@@ -130,11 +122,4 @@ function openConnection() {
     document.getElementById("close_connection").disabled = false;
     document.getElementById("pause_connection").disabled = false;
     is_connection_paused = false;
-}
-
-function downloadImage(graph) {
-    let a = document.createElement('a');
-    a.href = graph.toBase64Image();
-    a.download = 'my_file_name.png';
-    a.click();
 }
