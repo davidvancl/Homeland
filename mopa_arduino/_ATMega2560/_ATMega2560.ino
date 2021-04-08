@@ -26,7 +26,7 @@ unsigned long send_millis, co2_millis;
 
 DHT dht_inside_sensor(DHT_PIN_INSIDE, DHT_TYPE);
 DHT dht_outside_sensor(DHT_PIN_OUTSIDE, DHT_TYPE);
-RTC_Millis rtc;
+RTC_DS3231 rtc;
 
 void setup() {
   pinMode(RED_LED, OUTPUT);
@@ -39,8 +39,10 @@ void setup() {
   dht_outside_sensor.begin();
   send_millis = millis();
   co2_millis = millis();
-  rtc.begin(DateTime(F(__DATE__), F(__TIME__)));
-
+  rtc.begin();
+  if (rtc.lostPower()) {
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
   digitalWrite(RED_LED, HIGH);
   delay(180000);
   digitalWrite(RED_LED, LOW);

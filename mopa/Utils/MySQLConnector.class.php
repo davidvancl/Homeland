@@ -29,17 +29,37 @@ class MySQLConnector implements IDBConnector {
             foreach ($key_value as $key => $value){
                 $this->statement->bindParam((":".$key), $key_value[$key]);
             }
-            if (!$this->statement->execute()) {
-                die(ConfigWorker::jsonError("700","MySQL execute error."));
-            }
+            if (!$this->statement->execute()) die(ConfigWorker::jsonError("700","MySQL execute error."));
             return "insert:OK";
         } catch (PDOException $ex){
             die(ConfigWorker::jsonError($ex->getCode(),$ex->getMessage()));
         }
     }
 
-    public function get_interval($time_from, $time_to)
-    {
-        // TODO: Implement get_interval() method.
+    public function get_interval($time_from, $time_to) {
+        try {
+            $get_statement = $this->connection->prepare("SELECT * FROM monitoring");
+            $get_statement->bindParam(":date_from", $time_from);
+            $get_statement->bindParam("::date_to", $time_to);
+            if (!$get_statement->execute()) die(ConfigWorker::jsonError("700","MySQL execute error."));
+            $response = $get_statement->fetchAll();
+            $jsonObject = [
+                'data' => []
+            ];
+            foreach ($response as $line){
+                $jsonObject['data'][] = [
+                    'date' => $line['date_time'],
+                    'temperatureInside' => $line['temperature_inside'],
+                    'temperatureOutside' => $line['temperature_outside'],
+                    'humidityInside' => $line['humidity_inside'],
+                    'humidityOutside' => $line['humidity_outside'],
+                    'co2Inside' => $line['co2_inside'],
+                    'co2Outside' => $line['co2_outside']
+                ];
+            }
+            echo json_encode($jsonObject);
+        } catch (PDOException $exception){
+            die(ConfigWorker::jsonError($exception->getCode(), $exception->getMessage()));
+        }
     }
 }
