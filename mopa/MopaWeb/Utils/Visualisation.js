@@ -119,11 +119,12 @@ function getTime(date) {
 }
 
 function requestData(chart, type){
+    document.getElementById(type + "_loading").hidden = false;
     let data = 'from=' + (
         document.getElementById(type + "_date_from").value + " " + document.getElementById(type + "_time_from").value + ":00"
     ) + "&to=" + (
         document.getElementById(type + "_date_to").value + " " + document.getElementById(type + "_time_to").value + ":00"
-    ) + "&db_type=MySQL";
+    ) + "&db_type=Mongo";
     let client = new XMLHttpRequest();
     client.open('POST', 'http://192.168.2.20/dave/mopa/download.php', true);
     client.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
@@ -141,6 +142,7 @@ function requestData(chart, type){
             } catch (e){
                 popupError(client.responseText);
             }
+            document.getElementById(type + "_loading").hidden = true;
         }
 
     };
