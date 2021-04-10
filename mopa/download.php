@@ -9,7 +9,12 @@ class Download extends Firewall {
     public function __construct(){
         parent::__construct(["db_type", "from", "to"], false);
         $this->assignClient();
-        $this->process();
+
+        if (isset($_POST['export']) && !empty($_POST['export'])){
+            $this->export();
+        } else {
+            $this->process();
+        }
     }
 
     private function assignClient() {
@@ -18,7 +23,11 @@ class Download extends Firewall {
     }
 
     private function process() {
-        $this->client->get_interval($_POST['from'], $_POST['to']);
+        echo($this->client->get_interval($_POST['from'], $_POST['to']));
+    }
+
+    private function export(){
+        $json = $this->client->get_interval($_POST['from'], $_POST['to']);
     }
 }
 new Download();

@@ -1,4 +1,5 @@
 let temperatureChart, humidityChart, co2Chart;
+let database = "Mongo";
 
 function createStatChart(canvas, title_min, xTitle, yTitle) {
     return new Chart(document.getElementById(canvas).getContext('2d'), {
@@ -124,7 +125,7 @@ function requestData(chart, type){
         document.getElementById(type + "_date_from").value + " " + document.getElementById(type + "_time_from").value + ":00"
     ) + "&to=" + (
         document.getElementById(type + "_date_to").value + " " + document.getElementById(type + "_time_to").value + ":00"
-    ) + "&db_type=Mongo";
+    ) + "&db_type=" + database;
     let client = new XMLHttpRequest();
     client.open('POST', 'http://192.168.2.20/dave/mopa/download.php', true);
     client.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
@@ -139,12 +140,12 @@ function requestData(chart, type){
                     addData(chart, record['date'], record[type + 'Inside'], 0)
                     addData(chart, record['date'], record[type + 'Outside'], 1)
                 });
+                document.getElementById(type + "Count").innerHTML = " záznamů: <b>" + Object.keys(responseData['data']).length + "</b>";
             } catch (e){
                 popupError(client.responseText);
             }
             document.getElementById(type + "_loading").hidden = true;
         }
-
     };
     client.onerror = function() {
         popupError("Error na straně klienta. Kontaktujte administrátora.");

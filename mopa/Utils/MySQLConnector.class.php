@@ -1,8 +1,9 @@
 <?php
+require_once "DBExtension.class.php";
 require_once "ConfigWorker.class.php";
 require_once "Interfaces/IDBConnector.interface.php";
 
-class MySQLConnector implements IDBConnector {
+class MySQLConnector extends DBExtension implements IDBConnector {
     private $connection;
     private $statement;
 
@@ -24,7 +25,7 @@ class MySQLConnector implements IDBConnector {
         }
     }
 
-    public function insert($key_value) {
+    public function insert($key_value): string {
         try {
             foreach ($key_value as $key => $value){
                 $this->statement->bindParam((":".$key), $key_value[$key]);
@@ -38,26 +39,12 @@ class MySQLConnector implements IDBConnector {
 
     public function get_interval($time_from, $time_to) {
         try {
-            $get_statement = $this->connection->prepare("SELECT * FROM monitoring");
+            $get_statement = $this->connection->prepare("SELECT * FROM monitoring WHERE date_time >= :date_from AND date_time <= :date_to");
             $get_statement->bindParam(":date_from", $time_from);
-            $get_statement->bindParam("::date_to", $time_to);
+            $get_statement->bindParam(":date_to", $time_to);
             if (!$get_statement->execute()) die(ConfigWorker::jsonError("700","MySQL execute error."));
-            $response = $get_statement->fetchAll();
-            $jsonObject = [
-                'data' => []
-            ];
-            foreach ($response as $line){
-                $jsonObject['data'][] = [
-                    'date' => $line['date_time'],
-                    'temperatureInside' => $line['temperature_inside'],
-                    'temperatureOutside' => $line['temperature_outside'],
-                    'humidityInside' => $line['humidity_inside'],
-                    'humidityOutside' => $line['humidity_outside'],
-                    'co2Inside' => $line['co2_inside'],
-                    'co2Outside' => $line['co2_outside']
-                ];
-            }
-            echo json_encode($jsonObject);
+
+            return $this->get_db_json_response($get_statement->fetchAll());
         } catch (PDOException $exception){
             die(ConfigWorker::jsonError($exception->getCode(), $exception->getMessage()));
         }
