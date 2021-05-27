@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4f112d22-520d-42e5-9fbd-b1b396d25433" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>W:/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="W:/" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="W:/vendor/composer" />
+      <path value="W:/vendor/mongodb/mongodb" />
+      <path value="W:/vendor/jean85/pretty-package-versions" />
+      <path value="W:/vendor/symfony/polyfill-php80" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1q4lv3zdnA65nYJjvYpWwvUVBX2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.16.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.35" />
+    <property name="last_opened_file_path" value="W:/mopa" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="Z:\mopa\MopaWeb\Images" />
+      <recent name="Z:\mopa\MopaWeb\Utils" />
+      <recent name="Z:\mopa\MopaRTC" />
+      <recent name="Z:\mopa\MopaWeb" />
+      <recent name="Z:\mopa\Utils\Interfaces" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4f112d22-520d-42e5-9fbd-b1b396d25433" name="Default Changelist" comment="" />
+      <created>1616346969889</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616346969889</updated>
+      <workItem from="1616346971039" duration="2701000" />
+      <workItem from="1616359406200" duration="3990000" />
+      <workItem from="1616404077349" duration="1918000" />
+      <workItem from="1616424877653" duration="2392000" />
+      <workItem from="1616440084066" duration="14504000" />
+      <workItem from="1616455837229" duration="12000" />
+      <workItem from="1616576304377" duration="610000" />
+      <workItem from="1616588582725" duration="662000" />
+      <workItem from="1616590129022" duration="5033000" />
+      <workItem from="1616595225067" duration="74000" />
+      <workItem from="1616604257016" duration="4667000" />
+      <workItem from="1616663985970" duration="108000" />
+      <workItem from="1616666194287" duration="24942000" />
+      <workItem from="1616766022288" duration="6861000" />
+      <workItem from="1616788423251" duration="962000" />
+      <workItem from="1616853815934" duration="7793000" />
+      <workItem from="1616943086210" duration="9311000" />
+      <workItem from="1616961639620" duration="2141000" />
+      <workItem from="1617006336437" duration="865000" />
+      <workItem from="1617130235531" duration="14603000" />
+      <workItem from="1617182142650" duration="5849000" />
+      <workItem from="1617192560058" duration="2935000" />
+      <workItem from="1617209810299" duration="2551000" />
+      <workItem from="1617214310727" duration="42000" />
+      <workItem from="1617792319461" duration="277000" />
+      <workItem from="1617792767471" duration="2032000" />
+      <workItem from="1617815733441" duration="863000" />
+      <workItem from="1617821789109" duration="120000" />
+      <workItem from="1617911858056" duration="7093000" />
+      <workItem from="1617945858859" duration="594000" />
+      <workItem from="1617953600522" duration="2411000" />
+      <workItem from="1617958561208" duration="2355000" />
+      <workItem from="1617968307343" duration="96000" />
+      <workItem from="1618051729023" duration="769000" />
+      <workItem from="1618057560028" duration="3345000" />
+      <workItem from="1618229358282" duration="240000" />
+      <workItem from="1618236253297" duration="133000" />
+      <workItem from="1621859493996" duration="69000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

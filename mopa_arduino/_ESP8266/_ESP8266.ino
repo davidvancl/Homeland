@@ -9,8 +9,8 @@
 
 #define SERIAL_SPEED 9600
 
-const char* ssid = "DomaLAN";
-const char* password = "Slunickoo*123";
+const char* ssid = "Archer";
+const char* password = "Qxhk[e@ZX4d$y3H";
 
 String serverName = "http://192.168.2.20:80/dave/mopa/upload.php";
 String serial_string = "";
@@ -22,6 +22,7 @@ void setup() {
     delay(500);
     Serial.print(".");
   }
+  Serial.write("Connected.");
 }
 
 void loop() {
@@ -39,6 +40,7 @@ void loop() {
         String payload = httpClient.getString();
         Serial.print(payload);
       } else {
+        WiFi.reconnect();
         Serial.println("{WiFi Disconnected}");
       }
       serial_string = "";
